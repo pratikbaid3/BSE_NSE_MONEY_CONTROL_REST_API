@@ -1,17 +1,7 @@
-import requests
-from bs4 import BeautifulSoup as soup
-res = requests.get('https://www.bseindia.com/corporates/corporate_act.aspx')
-res.raise_for_status()
-page_soup = soup(res.content,features='lxml')
-allLinks=page_soup.find_all('td',{"class":"TTRow_left"})
-noOfLinks=len(allLinks)
+import latest_ca_scraper
 
-corporate_act={}
+def main():
+    print(latest_ca_scraper.latest_ca_scrape())
 
-i=0
-while(i<noOfLinks):
-    corporate_act[allLinks[i].text]=allLinks[i+1].text
-    print(allLinks[i].text)
-    i=i+2
-
-print(corporate_act)
+if __name__ == "__main__":
+    main()
