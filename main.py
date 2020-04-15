@@ -12,7 +12,9 @@ def main():
     elif(choice==2):
         secuarity_code=input("Enter the secuarity code")
         secuarity_name=input("Enter the secuarity name")
-        perticular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name)
-
+        print(perticular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name))
 if __name__ == "__main__":
     main()
+
+"""Nestle India Ltd.
+500790"""
