@@ -71,5 +71,4 @@ def latest_ca_scrape():
     return(json_data)
 
     '''//*[@id="ContentPlaceHolder1_gvData"]/tbody/tr[1]/td/table/tbody/tr/td[2]/a'''
-    '''//*[@id="ContentPlaceHolder1_gvData"]/tbody/tr[2]/td/table/tbody/tr/td[2]/a'''
     '''//*[@id="ContentPlaceHolder1_gvData"]/tbody/tr[1]/td/table/tbody/tr/td[3]/a'''
