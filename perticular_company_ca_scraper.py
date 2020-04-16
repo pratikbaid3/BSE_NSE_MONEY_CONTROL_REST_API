@@ -17,7 +17,7 @@ def companyDataScraper(secuarity_code,secuarity_name):
     'ctl00$ContentPlaceHolder1$hndvalue': 'S',
     'ctl00$ContentPlaceHolder1$hdnCheck': '',
     'ctl00$ContentPlaceHolder1$ddlcategory': 'E',
-    'ctl00$ContentPlaceHolder1$txtDate': '01/01/1980',
+    'ctl00$ContentPlaceHolder1$txtDate': '01/01/2015',
     'ctl00$ContentPlaceHolder1$txtTodate': '',
     'ctl00$ContentPlaceHolder1$SmartSearch$hdnCode': '',
     'ctl00$ContentPlaceHolder1$SmartSearch$smartSearch': '',
@@ -46,8 +46,6 @@ def companyDataScraper(secuarity_code,secuarity_name):
         r = s.get(site_url)
         r=s.post(site_url,data=data)
         page_soup=soup(r.content,features='lxml')
-        no_of_pages_tab=page_soup.find('tr',{'class':'pgr'})
-        no_of_pages=len(no_of_pages_tab.find_all('a'))+1
         dataRows=page_soup.find_all('tr',{"class":"TTRow"})
         dataList=[]
         for dataRow in dataRows:
@@ -75,11 +73,4 @@ def companyDataScraper(secuarity_code,secuarity_name):
             'CA of '+secuarity_name :ca_array
         }
         json_data=json.dumps(company_ca_json)
-        print(no_of_pages)
         return(json_data)
-
-
-'''url='https://www.bseindia.com/corporates/corporate_act.aspx?scripcode='+secuarity_code+'&scripname='+secuarity_name
-    print(url)
-    res=requests.get(url)
-    res.raise_for_status()'''
