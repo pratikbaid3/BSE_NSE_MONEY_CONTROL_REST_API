@@ -6,7 +6,7 @@ from selenium import webdriver
 
 
 
-def companyDataScraper(secuarity_code,secuarity_name):
+def companyDataScraper(secuarity_code,secuarity_name,start_date):
     data = {
     '__EVENTTARGET': '',
     '__EVENTARGUMENT': '',
@@ -17,7 +17,7 @@ def companyDataScraper(secuarity_code,secuarity_name):
     'ctl00$ContentPlaceHolder1$hndvalue': 'S',
     'ctl00$ContentPlaceHolder1$hdnCheck': '',
     'ctl00$ContentPlaceHolder1$ddlcategory': 'E',
-    'ctl00$ContentPlaceHolder1$txtDate': '01/01/2015',
+    'ctl00$ContentPlaceHolder1$txtDate': f'{start_date}',
     'ctl00$ContentPlaceHolder1$txtTodate': '',
     'ctl00$ContentPlaceHolder1$SmartSearch$hdnCode': '',
     'ctl00$ContentPlaceHolder1$SmartSearch$smartSearch': '',

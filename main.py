@@ -12,7 +12,8 @@ def main():
     elif(choice==2):
         secuarity_code=input("Enter the secuarity code")
         secuarity_name=input("Enter the secuarity name")
-        print(perticular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name))
+        start_date=input("Enter the start date")
+        print(perticular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name,start_date))
 if __name__ == "__main__":
     main()
 
