@@ -69,6 +69,3 @@ def latest_ca_scrape():
     }
     json_data=json.dumps(latest_ca_json)
     return(json_data)
-
-    '''//*[@id="ContentPlaceHolder1_gvData"]/tbody/tr[1]/td/table/tbody/tr/td[2]/a'''
-    '''//*[@id="ContentPlaceHolder1_gvData"]/tbody/tr[1]/td/table/tbody/tr/td[3]/a'''

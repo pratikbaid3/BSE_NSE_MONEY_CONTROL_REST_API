@@ -36,6 +36,24 @@ def dividends_scraper(temp_div):
             print(td.getText())
         print()
 
+def bonus_scraper(temp_div):
+    tr_list=temp_div.find_all('tr')
+    no_of_items=len(tr_list)
+    for i in range(1,no_of_items):
+        td_list=tr_list[i].find_all('td')
+        for td in td_list:
+            print(td.getText())
+        print()
+
+def rights_scraper(temp_div):
+    tr_list=temp_div.find_all('tr')
+    no_of_items=len(tr_list)
+    for i in range(1,no_of_items):
+        td_list=tr_list[i].find_all('td')
+        for td in td_list:
+            print(td.getText())
+        print()
+
 
 bonus_div_is_empty=check_if_div_empty(bonus_div)
 splits_div_is_empty=check_if_div_empty(splits_div)
@@ -46,7 +64,10 @@ if(not splits_div_is_empty):
     splits_scraper(splits_div)
 if(not dividends_div_is_empty):
     dividends_scraper(dividends_div)
-
+if(not rights_div_is_empty):
+    rights_scraper(rights_div)
+if(not bonus_div_is_empty):
+    bonus_scraper(bonus_div)
 
 
 
