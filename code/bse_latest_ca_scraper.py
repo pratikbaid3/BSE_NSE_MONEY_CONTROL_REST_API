@@ -9,13 +9,15 @@ def latest_ca_scrape():
     page_soup = soup(res.content,features='lxml')
 
     no_of_pages_tab=page_soup.find('tr',{'class':'pgr'})
-    no_of_pages=len(no_of_pages_tab.find_all('a'))+1
-
-    options = webdriver.ChromeOptions()
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument('--incognito')
-    options.add_argument('--headless') #This prevents the browser from opening up
-    driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", chrome_options=options)
+    if(no_of_pages_tab==None):
+        no_of_pages=1
+    else:
+        no_of_pages=len(no_of_pages_tab.find_all('a'))+1
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--incognito')
+        options.add_argument('--headless') #This prevents the browser from opening up
+        driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", chrome_options=options)
 
     pageSource=res.content
     dataList=[]
@@ -64,8 +66,4 @@ def latest_ca_scrape():
             'actual_payment_date':data[9]
         }
         ca_array.append(corporate_action)
-    latest_ca_json={
-        'Latest_CA':ca_array
-    }
-    json_data=json.dumps(latest_ca_json)
-    return(json_data)
+    return (ca_array)

@@ -69,8 +69,4 @@ def companyDataScraper(secuarity_code,secuarity_name,start_date):
                 'actual_payment_date':data[9]
             }
             ca_array.append(corporate_action)
-        company_ca_json={
-            'CA of '+secuarity_name :ca_array
-        }
-        json_data=json.dumps(company_ca_json)
-        return(json_data)
+        return(ca_array)

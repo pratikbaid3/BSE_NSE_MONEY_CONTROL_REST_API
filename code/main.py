@@ -1,5 +1,5 @@
-import latest_ca_scraper
-import perticular_company_ca_scraper
+import bse_latest_ca_scraper
+import bse_particular_company_ca_scraper
 
 def main():
     print("----------MENU----------")
@@ -8,12 +8,12 @@ def main():
     choice=int(input("Enter your choice: "))
 
     if(choice==1):
-        print(latest_ca_scraper.latest_ca_scrape())
+        print(bse_latest_ca_scraper.latest_ca_scrape())
     elif(choice==2):
         secuarity_code=input("Enter the secuarity code")
         secuarity_name=input("Enter the secuarity name")
         start_date=input("Enter the start date")
-        print(perticular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name,start_date))
+        print(bse_particular_company_ca_scraper.companyDataScraper(secuarity_code,secuarity_name,start_date))
 if __name__ == "__main__":
     main()
 
