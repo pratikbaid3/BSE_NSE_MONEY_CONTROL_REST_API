@@ -15,11 +15,11 @@ api=Api(app)
 
 class LatestCA(Resource):
     def get(self):
-        return {'latest ca': bse_latest_ca_scraper.latest_ca_scrape()}
+        return {'latest_ca': bse_latest_ca_scraper.latest_ca_scrape()}
 
 class CompanyCA(Resource):
     def get(self,name,code):
-        return {'message':bse_company_ca_scraper.company_ca_scraper(name,code)}
+        return {'latest_ca':bse_company_ca_scraper.company_ca_scraper(name,code)}
 
 api.add_resource(LatestCA,'/latestca')
 api.add_resource(CompanyCA,'/companyca/<string:name>/<string:code>')

@@ -1,11 +1,10 @@
 import bse_latest_ca_scraper
-import bse_particular_company_ca_scraper
 import money_control_upcoming_ca_scraper
 
 def main():
     print("----------MENU----------")
     print("1. Latest corporate action")
-    print("2. Corporate action of a perticulat company")
+    print("2. Money Control Upcoming CA")
     choice=int(input("Enter your choice: "))
 
     if(choice==1):
