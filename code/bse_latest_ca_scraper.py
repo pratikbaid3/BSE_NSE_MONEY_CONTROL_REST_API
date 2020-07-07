@@ -24,6 +24,8 @@ def latest_ca_scrape():
     dataList=[]
     page_soup = soup(pageSource,features='lxml')
     dataRows=page_soup.find_all('tr',{"class":"TTRow"})
+
+    #Scraping the data and adding it into the dataList
     for dataRow in dataRows:
         dataColumns=dataRow.find_all('td')
         data=[]
@@ -50,29 +52,19 @@ def latest_ca_scrape():
                     data.append(dataColumn.text)
                 dataList.append(data)
             
-        
-
-    ca_array=[]
+    #Initializing the database
     conn=sqlite3.connect('corporate_action.db')
     c=conn.cursor()
     create_table="CREATE TABLE IF NOT EXISTS latest_bse_ca (security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
     c.execute(create_table)
+
+    #Deleting the preexisting data from the database
+    c.execute('DELETE FROM latest_bse_ca')
+
+    #Adding data to the database
     add_data_to_db="INSERT INTO latest_bse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
     for data in dataList:
         c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
-        corporate_action={
-            'security_code':data[0],
-            'security_name':data[1],
-            'ex_date':data[2],
-            'purpose':data[3],
-            'record_date':data[4],
-            'bc_start_date':data[5],
-            'bc_end_date':data[6],
-            'nd_start_date':data[7],
-            'nd_end_date':data[8],
-            'actual_payment_date':data[9]
-        }
-        ca_array.append(corporate_action)
     conn.commit()
     conn.close()
-    return (ca_array)
+    return ('latest corporate action database updated successfully')
