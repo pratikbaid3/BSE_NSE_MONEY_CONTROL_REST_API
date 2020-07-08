@@ -55,16 +55,28 @@ def latest_ca_scrape():
     #Initializing the database
     conn=sqlite3.connect('corporate_action.db')
     c=conn.cursor()
-    create_table="CREATE TABLE IF NOT EXISTS latest_bse_ca (security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
+    c_new=conn.cursor()
+    create_table="CREATE TABLE IF NOT EXISTS latest_bse_ca (key text PRIMARY KEY UNIQUE,security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
     c.execute(create_table)
 
+    #Transfering the data of the latest corporate action to the storage
+    create_table="CREATE TABLE IF NOT EXISTS bse_ca (key text PRIMARY KEY UNIQUE,security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
+    c_new.execute(create_table)
+    c_new.execute('SELECT * FROM latest_bse_ca')
+    add_data_to_db="INSERT INTO bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+    for data in c_new:
+        try:
+            c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10]))
+        except:
+            print('Skipped')
     #Deleting the preexisting data from the database
     c.execute('DELETE FROM latest_bse_ca')
 
     #Adding data to the database
-    add_data_to_db="INSERT INTO latest_bse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+    add_data_to_db="INSERT INTO latest_bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
     for data in dataList:
-        c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+        uniqueKey=data[0]+data[2]+data[3]
+        c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
     conn.commit()
     conn.close()
     return ('latest corporate action database updated successfully')
