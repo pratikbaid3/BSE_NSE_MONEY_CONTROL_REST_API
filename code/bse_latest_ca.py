@@ -23,4 +23,6 @@ def latest_ca():
             'actual_payment_date':data[10]
         }
         ca_array.append(corporate_action)
+    conn.commit()
+    conn.close()
     return (ca_array)
