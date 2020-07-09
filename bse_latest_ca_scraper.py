@@ -86,4 +86,6 @@ def latest_ca_scrape():
         c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
     conn.commit()
     conn.close()
-    return ('latest corporate action database updated successfully')
+    # return ('latest corporate action database updated successfully')
+    print('Done Scraping')
+latest_ca_scrape()
