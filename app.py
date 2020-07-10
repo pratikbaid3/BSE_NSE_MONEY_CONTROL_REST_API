@@ -6,10 +6,10 @@ import json
 from bs4 import BeautifulSoup as soup
 from selenium import webdriver
 import os
-import bse_latest_ca_scraper
-import bse_company_ca_scraper
-import bse_latest_ca
-import bse_company_ca
+from bse import bse_latest_ca_scraper
+from bse import bse_company_ca_scraper
+from bse import bse_latest_ca
+from bse import bse_company_ca
 
 app=Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS']=True
