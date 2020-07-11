@@ -87,3 +87,5 @@ def latest_ca_scrape():
     conn.commit()
     conn.close()
     return ('latest corporate action database updated successfully')
+
+print(latest_ca_scrape())

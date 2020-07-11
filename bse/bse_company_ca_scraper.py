@@ -82,8 +82,6 @@ def company_ca_scraper(security_name,security_code):
                 for dataColumn in dataColumns:
                     data.append(dataColumn.text)
                 dataList.append(data)
-            
-        
 
     ca_array=[]
     for data in dataList:
@@ -101,4 +99,5 @@ def company_ca_scraper(security_name,security_code):
         }
         ca_array.append(corporate_action)
     return(ca_array)
-# company_ca_scraper()
+
+print(company_ca_scraper('BOMDYEING','500020'))

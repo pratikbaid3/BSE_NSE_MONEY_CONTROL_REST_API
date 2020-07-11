@@ -1,7 +1,3 @@
-import requests
-import json
-from bs4 import BeautifulSoup as soup
-from selenium import webdriver
 import sqlite3
 
 def latest_ca():
