@@ -14,7 +14,7 @@ from bse import bse_company_ca
 #NSE Imports
 from nse import nse_latest_ca
 
-app=Flask(__name__)
+app=Flask(__name__, static_url_path='/public', static_folder='public/')
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.secret_key='Pratik'
 api=Api(app)
