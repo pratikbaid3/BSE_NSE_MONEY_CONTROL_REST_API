@@ -6,42 +6,44 @@ import json
 from bs4 import BeautifulSoup as soup
 from selenium import webdriver
 import os
-# import bse_latest_ca_scraper
-import bse_company_ca_scraper
-import bse_latest_ca
-import bse_company_ca
+
+#BSE Imports
+from bse import bse_latest_ca
+from bse import bse_company_ca
+
+#NSE Imports
+from nse import nse_latest_ca
 
 app=Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.secret_key='Pratik'
 api=Api(app)
 
-#Latest corporate action from the database(Server)
-class LatestCA(Resource):
+#BSE Latest corporate action from the database(Server)
+class LatestCA_BSE(Resource):
     def get(self):
         return{'latest_ca':bse_latest_ca.latest_ca()}
 
-#Particular company corporate action from historical data
-class CompanyCA(Resource):
+#BSE Particular company corporate action from historical data
+class CompanyCA_BSE(Resource):
     def get(self,code):
         return{'ca':bse_company_ca.company_ca(code)}
 
+#NSE Latest corporate action from the database
+class LatestCA_NSE(Resource):
+    def get(self):
+        return{'latest_ca':nse_latest_ca.latest_ca()}
 
-#Particular company corporate action (Scraper & Server)
-class CompanyCAScraper(Resource):
-    def get(self,name,code):
-        return {'company_ca':bse_company_ca_scraper.company_ca_scraper(name,code)}
+#NSE Particular company corporate action from historical data
 
-#Scraper for latest croporate action(Scraper)
-# class LatestCAScraper(Resource):
-#     def get(self):
-#         return {'message':bse_latest_ca_scraper.latest_ca_scrape()}
+#Money Control Latest corporate action from the database
+
+#Money Control Particular company corporate action from historical data
         
 
-api.add_resource(LatestCA,'/api/latestca')
-api.add_resource(CompanyCA,'/api/companyca/<string:code>')
-api.add_resource(CompanyCAScraper,'/api/companycascraper/<string:name>/<string:code>')
-# api.add_resource(LatestCAScraper,'/api/latestcascraper')
+api.add_resource(LatestCA_BSE,'/api/bse_latestca')
+api.add_resource(CompanyCA_BSE,'/api/bse_companyca/<string:code>')
+api.add_resource(LatestCA_NSE,'/api/nse_latestca')
 
 if __name__=='__main__':
     app.run(port=5000,debug=True)
