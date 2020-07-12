@@ -3,7 +3,7 @@ import sqlite3
 def company_ca(security_code):
     conn=sqlite3.connect('corporate_action.db')
     c=conn.cursor()
-    c.execute(f'SELECT * FROM latest_bse_ca WHERE security_code = {security_code}')
+    c.execute(f'SELECT * FROM bse_ca WHERE security_code = {security_code}')
     ca_array=[]
     for data in c:
         corporate_action={

@@ -1,8 +1,14 @@
 import requests
 import json
-from selenium import webdriver
 from bs4 import BeautifulSoup as bs4
 import sqlite3
+
+class ScrapeError(Exception):
+    def __init__(self, org):
+        self.org = org
+        self.message = f"Cannot Scrape {org}"
+    def __str__(self):
+        return f"Some error occured while scraping {self.org}"
 
 class NSEScraper():
     def __init__(self):
@@ -105,6 +111,7 @@ for data in c_new:
         c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
     except:
         print('Skipped')
+        
 #Deleting the pre-existing data from the database
 c.execute('DELETE FROM latest_nse_ca')
 
