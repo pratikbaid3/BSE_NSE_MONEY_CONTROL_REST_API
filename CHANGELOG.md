@@ -1,4 +1,7 @@
 * Added scripts to convert the latest CA into pdf and csv and then serve it via a Flask endpoint (127.0.0.1:5000/public/filename.pdf)
+* Added script to scrape the latest NSE Website
+* Added script to merge latest data and old data for NSE
+* Added script to get all the companies listed in NSE
 
 **TODO**
 
