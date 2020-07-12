@@ -66,21 +66,24 @@ class NSEScraper():
     def scrape_data(self):
         self.setup()
         table = self.soup.find_all('table')[1]
-        scraped_corporate_datas = table.find_all('tr')
-        if len(scraped_corporate_datas) <= 1:
-            return False
-        for corporate_data in scraped_corporate_datas:
-            scraped_data = corporate_data.find_all('td')
-            if len(scraped_data) <= 0:
-                continue
-            temp_data = {}
-            for index, data in enumerate(scraped_data):
-                # Two extra columns are present, ND Start Date and ND End Date which is null
-                if index < len(self.data_format):
-                    textual_data = self.get_data_text(data)
-                    temp_data[self.data_format[index]] = textual_data
-            self.data.append(temp_data)
-        return True
+        try:
+            scraped_corporate_datas = table.find_all('tr')
+            if len(scraped_corporate_datas) <= 1:
+                return False
+            for corporate_data in scraped_corporate_datas:
+                scraped_data = corporate_data.find_all('td')
+                if len(scraped_data) <= 0:
+                    continue
+                temp_data = {}
+                for index, data in enumerate(scraped_data):
+                    # Two extra columns are present, ND Start Date and ND End Date which is null
+                    if index < len(self.data_format):
+                        textual_data = self.get_data_text(data)
+                        temp_data[self.data_format[index]] = textual_data
+                self.data.append(temp_data)
+            return True
+        except:
+            print('ERROR')
     
     def get_all_corporate_actions(self):
         status = self.scrape_data()
