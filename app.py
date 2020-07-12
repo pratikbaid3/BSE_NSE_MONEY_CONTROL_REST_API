@@ -45,7 +45,7 @@ class CompanyCA_NSE(Resource):
 #Money Control Particular company corporate action from historical data
 from nse import nse_latest_ca_scraper
 class TEST(Resource):
-    def get(self,code):
+    def get(self):
         return{'ca':nse_latest_ca_scraper.scraper()}
 
 api.add_resource(TEST,'/api/test')

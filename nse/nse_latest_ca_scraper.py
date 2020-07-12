@@ -135,4 +135,4 @@ def scraper():
     conn.commit()
     conn.close()
 
-    print('Scraped Data Successfully')
+    return ('Scraped Data Successfully')
