@@ -28,6 +28,7 @@ def latest_ca_scrape():
         # options.add_argument('--headless') #This prevents the browser from opening up
         # driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", chrome_options=options)
 
+
     pageSource=res.content
     dataList=[]
     page_soup = soup(pageSource,features='lxml')

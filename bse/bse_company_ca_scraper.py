@@ -6,8 +6,6 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
 def company_ca_scraper(security_name,security_code):
-
-    
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--headless")
