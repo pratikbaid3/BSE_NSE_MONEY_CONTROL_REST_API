@@ -44,7 +44,7 @@ class NSEScraper():
         if status == 200:
             self.soup = bs4(res.content, features='lxml')
         else:
-            print('Error')
+            raise ScrapeError("NSE")
 
     def print_soup(self):
         if __name__ == "__main__":
