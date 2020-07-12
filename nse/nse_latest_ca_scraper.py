@@ -4,6 +4,13 @@ from selenium import webdriver
 from bs4 import BeautifulSoup as bs4
 import sqlite3
 
+class ScrapeError(Exception):
+    def __init__(self, org):
+        self.org = org
+        self.message = f"Cannot Scrape {org}"
+    def __str__(self):
+        return f"Some error occured while scraping {self.org}"
+
 class NSEScraper():
     def __init__(self):
         self.NSE_CORPORATE_ACTION_HOMEPAGE_URL = "https://www1.nseindia.com/sme/marketinfo/corporates/actions/latestCorpActions.jsp?currentPage={}"
