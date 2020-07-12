@@ -91,48 +91,46 @@ class NSEScraper():
     def display_data(self):
         if __name__ == "__main__":
             print(self.get_data())
+#Initializing the scraper
+nse=NSEScraper()
+nse.get_all_corporate_actions()
+nse_data_list=nse.get_data()
 
-def scraper():
-    #Initializing the scraper
-    nse=NSEScraper()
-    nse.get_all_corporate_actions()
-    nse_data_list=nse.get_data()
+#Initializing DB
+conn=sqlite3.connect('corporate_action.db')
+c=conn.cursor()
+c_new=conn.cursor()
+create_table="CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+c.execute(create_table)
 
-    #Initializing DB
-    conn=sqlite3.connect('corporate_action.db')
-    c=conn.cursor()
-    c_new=conn.cursor()
-    create_table="CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
-    c.execute(create_table)
+#Transfering the data of the latest corporate action to the storage
+create_table="CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+c_new.execute(create_table)
+c_new.execute('SELECT * FROM latest_nse_ca')
+add_data_to_db="INSERT INTO nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+for data in c_new:
+    try:
+        c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+    except:
+        print('Skipped')
+        
+#Deleting the pre-existing data from the database
+c.execute('DELETE FROM latest_nse_ca')
 
-    #Transfering the data of the latest corporate action to the storage
-    create_table="CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
-    c_new.execute(create_table)
-    c_new.execute('SELECT * FROM latest_nse_ca')
-    add_data_to_db="INSERT INTO nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
-    for data in c_new:
+
+#Refreshing the latest ca db
+add_data_to_db="INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+
+for nse_data in nse_data_list:
+    if(nse_data['Ex-Date']!=None):
+        key=nse_data['Symbol']+nse_data['Purpose']+nse_data['Ex-Date']
         try:
-            c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+            c.execute(add_data_to_db,(key,nse_data['Symbol'],nse_data['Company Name'],nse_data['Series'],nse_data['Face Value'],nse_data['Purpose'],nse_data['Ex-Date'],nse_data['Record Date'],nse_data['BC Start-Date'],nse_data['BC End-Date']))
         except:
-            print('Skipped')
-            
-    #Deleting the pre-existing data from the database
-    c.execute('DELETE FROM latest_nse_ca')
-
-
-    #Refreshing the latest ca db
-    add_data_to_db="INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
-
-    for nse_data in nse_data_list:
-        if(nse_data['Ex-Date']!=None):
-            key=nse_data['Symbol']+nse_data['Purpose']+nse_data['Ex-Date']
-            try:
-                c.execute(add_data_to_db,(key,nse_data['Symbol'],nse_data['Company Name'],nse_data['Series'],nse_data['Face Value'],nse_data['Purpose'],nse_data['Ex-Date'],nse_data['Record Date'],nse_data['BC Start-Date'],nse_data['BC End-Date']))
-            except:
-                print(nse_data)
-        else:
             print(nse_data)
-    conn.commit()
-    conn.close()
+    else:
+        print(nse_data)
+conn.commit()
+conn.close()
 
-    return ('Scraped Data Successfully')
+print('Scraped Data Successfully')
