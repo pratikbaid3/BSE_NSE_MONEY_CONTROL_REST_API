@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup as bs4
 import pandas as pd
 import os
 import warnings
+import sqlite3
 
 
 def get_csv_link():
@@ -74,3 +75,18 @@ def get_company_list():
 
 
 company_list = get_company_list()
+
+
+#Adding the data to the db
+conn=sqlite3.connect('corporate_action.db')
+c=conn.cursor()
+c_new=conn.cursor()
+create_table="CREATE TABLE IF NOT EXISTS nse_companies (code text PRIMARY KEY UNIQUE,company text)"
+c.execute(create_table)
+add_data_to_db="INSERT INTO nse_companies VALUES (?,?)"
+
+for company in company_list:
+    c.execute(add_data_to_db,(company['Symbol'],company['Company Name']))
+
+conn.commit()
+conn.close()

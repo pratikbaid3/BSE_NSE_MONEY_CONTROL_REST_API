@@ -16,7 +16,8 @@ from nse import nse_latest_ca
 from nse import nse_company_ca
 
 #MoneyControl Imports
-from money_control import money_control_upcoming_ca_scraper
+from money_control import money_control_upcoming_ca
+from money_control import money_control_company_ca
 
 app=Flask(__name__, static_url_path='/public', static_folder='public/')
 app.config['PROPAGATE_EXCEPTIONS']=True
@@ -46,9 +47,12 @@ class CompanyCA_NSE(Resource):
 #Money Control Latest corporate action from the database
 class LatestCA_MC(Resource):
     def get(self):
-        return{'latest_ca':money_control_upcoming_ca_scraper.money_control_ca_scraper()}
+        return{'latest_ca':money_control_upcoming_ca.latest_ca()}
 
 #Money Control Particular company corporate action from historical data
+class CompanyCA_MC(Resource):
+    def get(self,code):
+        return{'ca':money_control_company_ca.company_ca(code)}
         
 
 api.add_resource(LatestCA_BSE,'/api/bse_latestca')
@@ -56,6 +60,7 @@ api.add_resource(CompanyCA_BSE,'/api/bse_companyca/<string:code>')
 api.add_resource(LatestCA_NSE,'/api/nse_latestca')
 api.add_resource(CompanyCA_NSE,'/api/nse_companyca/<string:code>')
 api.add_resource(LatestCA_MC,'/api/mc_latestca')
+api.add_resource(CompanyCA_MC,'/api/mc_companyca/<string:code>')
 
 if __name__=='__main__':
     app.run(port=5000,debug=True)

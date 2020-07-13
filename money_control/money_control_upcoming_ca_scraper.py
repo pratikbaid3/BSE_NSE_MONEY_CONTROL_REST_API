@@ -27,13 +27,12 @@ def money_control_ca_scraper():
         no_of_items=len(tr_list)
         for i in range(1,no_of_items):
             td_list=tr_list[i].find_all('td')
-            ca={
-                'company_name':td_list[0].getText(),
-                'purpose':'SPLITS from Old FV '+td_list[1].getText()+' to New FV '+td_list[2].getText(),
-                'anouncment_date':None,
-                'record_date':None,
-                'ex-date':td_list[3].getText(),
-            }
+            ca=[]
+            ca.append(td_list[0].getText())
+            ca.append('SPLITS from Old FV '+td_list[1].getText()+' to New FV '+td_list[2].getText())
+            ca.append('None')
+            ca.append('None')
+            ca.append(td_list[3].getText())
             ca_list.append(ca)
 
     def dividends_scraper(temp_div):
@@ -41,13 +40,12 @@ def money_control_ca_scraper():
         no_of_items=len(tr_list)
         for i in range(1,no_of_items):
             td_list=tr_list[i].find_all('td')
-            ca={
-                'company_name':td_list[0].getText(),
-                'purpose':td_list[1].getText() + ' DIVIDEND of '+td_list[2].getText(),
-                'anouncment_date':td_list[3].getText(),
-                'record_date':td_list[4].getText(),
-                'ex-date':td_list[5].getText(),
-            }
+            ca=[]
+            ca.append(td_list[0].getText())
+            ca.append(td_list[1].getText() + ' DIVIDEND of '+td_list[2].getText())
+            ca.append(td_list[3].getText())
+            ca.append(td_list[4].getText())
+            ca.append(td_list[5].getText())
             ca_list.append(ca)
 
     def bonus_scraper(temp_div):
@@ -55,13 +53,12 @@ def money_control_ca_scraper():
         no_of_items=len(tr_list)
         for i in range(1,no_of_items):
             td_list=tr_list[i].find_all('td')
-            ca={
-                'company_name':td_list[0].getText(),
-                'purpose':'BONUS RATIO of '+td_list[1].getText(),
-                'anouncment_date':td_list[2].getText(),
-                'record_date':td_list[3].getText(),
-                'ex-date':td_list[4].getText(),
-            }
+            ca=[]
+            ca.append(td_list[0].getText())
+            ca.append('BONUS RATIO of '+td_list[1].getText())
+            ca.append(td_list[2].getText())
+            ca.append(td_list[3].getText())
+            ca.append(td_list[4].getText())
             ca_list.append(ca)
 
     def rights_scraper(temp_div):
@@ -69,13 +66,19 @@ def money_control_ca_scraper():
         no_of_items=len(tr_list)
         for i in range(1,no_of_items):
             td_list=tr_list[i].find_all('td')
-            ca={
-                'company_name':td_list[0].getText(),
-                'purpose':'RIGHTS RATIO of '+td_list[1].getText()+' with PREMIUM of '+td_list[2].getText(),
-                'anouncment_date':td_list[3].getText(),
-                'record_date':td_list[4].getText(),
-                'ex-date':td_list[5].getText(),
-            }
+            # ca={
+            #     'company_name':td_list[0].getText(),
+            #     'purpose':'RIGHTS RATIO of '+td_list[1].getText()+' with PREMIUM of '+td_list[2].getText(),
+            #     'anouncment_date':td_list[3].getText(),
+            #     'record_date':td_list[4].getText(),
+            #     'ex-date':td_list[5].getText(),
+            # }
+            ca=[]
+            ca.append(td_list[0].getText())
+            ca.append('RIGHTS RATIO of '+td_list[1].getText()+' with PREMIUM of '+td_list[2].getText())
+            ca.append(td_list[3].getText())
+            ca.append(td_list[4].getText())
+            ca.append(td_list[5].getText())
             ca_list.append(ca)
 
 
@@ -93,33 +96,35 @@ def money_control_ca_scraper():
     if(not bonus_div_is_empty):
         bonus_scraper(bonus_div)
 
-    # #Initializing the database
-    # conn=sqlite3.connect('corporate_action.db')
-    # c=conn.cursor()
-    # c_new=conn.cursor()
-    # create_table="CREATE TABLE IF NOT EXISTS latest_mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
-    # c.execute(create_table)
-
-    # #Transfering the data of the latest corporate action to the storage
-    # create_table="CREATE TABLE IF NOT EXISTS mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
-    # c_new.execute(create_table)
-    # c_new.execute('SELECT * FROM latest_mc_ca')
-    # add_data_to_db="INSERT INTO mc_ca VALUES (?,?,?,?,?,?)"
-    # for data in c_new:
-    #     try:
-    #         c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5]))
-    #     except:
-    #         print('Skipped')
-    # #Deleting the preexisting data from the database
-    # c.execute('DELETE FROM latest_mc_ca')
-
-    # #Adding data to the database
-    # add_data_to_db="INSERT INTO latest_mc_ca VALUES (?,?,?,?,?,?)"
-    # for data in ca_list:
-    #     uniqueKey=data[0]+data[1]+data[2]
-    #     c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4]))
-    # conn.commit()
-    # conn.close()
-    # return ('latest corporate action database updated successfully')
-
+    print(ca_list)
     return ca_list
+
+ca_list=money_control_ca_scraper()
+#Initializing the database
+conn=sqlite3.connect('corporate_action.db')
+c=conn.cursor()
+c_new=conn.cursor()
+create_table="CREATE TABLE IF NOT EXISTS latest_mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+c.execute(create_table)
+
+#Transfering the data of the latest corporate action to the storage
+create_table="CREATE TABLE IF NOT EXISTS mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+c_new.execute(create_table)
+c_new.execute('SELECT * FROM latest_mc_ca')
+add_data_to_db="INSERT INTO mc_ca VALUES (?,?,?,?,?,?)"
+for data in c_new:
+    try:
+        c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5]))
+    except:
+        print('Skipped')
+#Deleting the preexisting data from the database
+c.execute('DELETE FROM latest_mc_ca')
+
+#Adding data to the database
+add_data_to_db="INSERT INTO latest_mc_ca VALUES (?,?,?,?,?,?)"
+for data in ca_list:
+    uniqueKey=data[0]+data[1]+data[2]
+    c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4]))
+conn.commit()
+conn.close()
+print ('latest corporate action database updated successfully')
