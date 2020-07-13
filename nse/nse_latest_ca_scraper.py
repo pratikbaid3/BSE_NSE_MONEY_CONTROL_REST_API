@@ -78,14 +78,9 @@ class NSEScraper:
             "Authority": "www.nseindia.com",
             "Cache-Control": "max-age=0",
         }
-        proxyDict = {
-        "http"  : os.environ.get('FIXIE_URL', ''),
-        "https" : os.environ.get('FIXIE_URL', '')
-        }
-
         for typ in action_type:
             res = requests.get(
-                self.NSE_URL.format(typ), headers=headers,proxies=proxyDict
+                self.NSE_URL.format(typ), headers=headers,
             )
             res.raise_for_status()
             for data in res.json():
