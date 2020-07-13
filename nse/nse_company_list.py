@@ -44,4 +44,4 @@ def get_company_list():
     data = df.T.to_dict().values()
     return data
 
-company_list = get_company_list()
+print(get_company_list())
