@@ -15,18 +15,18 @@ def latest_ca_scrape():
         no_of_pages=1
     else:
         no_of_pages=len(no_of_pages_tab.find_all('a'))+1
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--no-sandbox")
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        # chrome_options.add_argument("--headless")
+        # chrome_options.add_argument("--disable-dev-shm-usage")
+        # chrome_options.add_argument("--no-sandbox")
+        # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-        # options = webdriver.ChromeOptions()
-        # options.add_argument('--ignore-certificate-errors')
-        # options.add_argument('--incognito')
-        # options.add_argument('--headless') #This prevents the browser from opening up
-        # driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", chrome_options=options)
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--incognito')
+        options.add_argument('--headless') #This prevents the browser from opening up
+        driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", chrome_options=options)
 
 
     pageSource=res.content
