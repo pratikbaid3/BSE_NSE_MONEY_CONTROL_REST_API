@@ -5,6 +5,7 @@ import warnings
 import json
 import sqlite3
 
+
 class NSEScraper:
     def __init__(self):
         self.data = []
@@ -63,12 +64,23 @@ class NSEScraper:
 
     def scrape_data(self):
         action_type = ["equities", "debt", "mf", "sme"]
+        headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.9,bn-IN;q=0.8,bn;q=0.7,la;q=0.6",
+            "Scheme": "https",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            "Authority": "www.nseindia.com",
+            "Cache-Control": "max-age=0",
+        }
         for typ in action_type:
             res = requests.get(
-                self.NSE_URL.format(typ),
-                headers={
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
-                },
+                self.NSE_URL.format(typ), headers=headers,
             )
             res.raise_for_status()
             for data in res.json():
@@ -83,53 +95,87 @@ class NSEScraper:
         self.scrape_data()
         return self.data
 
+
 def mergeData(currData=[]):
-    old_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'nse_old.json')
+    old_data_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "nse_old.json"
+    )
     if not os.path.exists(old_data_path):
         warnings.warn("Scraped data for previous NSE Website is not present.")
         return currData
-    
+
     prevData = []
     with open(old_data_path) as fd:
         prevData = json.load(fd)
     return [*currData, *prevData]
 
+
 nse = NSEScraper()
 currData = nse.get_corporate_actions()
 nse_data_list = mergeData(currData)
 
+print(nse_data_list)
+
 # Initializing DB
-conn=sqlite3.connect('corporate_action.db')
-c=conn.cursor()
-c_new=conn.cursor()
-create_table="CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+conn = sqlite3.connect("corporate_action.db")
+c = conn.cursor()
+c_new = conn.cursor()
+create_table = "CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
 c.execute(create_table)
 
-#Transfering the data of the latest corporate action to the storage
-create_table="CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+# Transfering the data of the latest corporate action to the storage
+create_table = "CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
 c_new.execute(create_table)
-c_new.execute('SELECT * FROM latest_nse_ca')
-add_data_to_db="INSERT INTO nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+c_new.execute("SELECT * FROM latest_nse_ca")
+add_data_to_db = "INSERT INTO nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
 for data in c_new:
     try:
-        c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+        c.execute(
+            add_data_to_db,
+            (
+                data[0],
+                data[1],
+                data[2],
+                data[3],
+                data[4],
+                data[5],
+                data[6],
+                data[7],
+                data[8],
+                data[9],
+            ),
+        )
     except:
-        print('Skipped')
+        print("Skipped")
 
-#Deleting the pre-existing data from the database
-c.execute('DELETE FROM latest_nse_ca')
+# Deleting the pre-existing data from the database
+c.execute("DELETE FROM latest_nse_ca")
 
 
-#Refreshing the latest ca db
-add_data_to_db="INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+# Refreshing the latest ca db
+add_data_to_db = "INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
 
 print(nse_data_list)
 
 for nse_data in nse_data_list:
-    if(nse_data['Ex-Date']!=None):
-        key=nse_data['Symbol']+nse_data['Purpose']+nse_data['Ex-Date']
+    if nse_data["Ex-Date"] != None:
+        key = nse_data["Symbol"] + nse_data["Purpose"] + nse_data["Ex-Date"]
         try:
-            c.execute(add_data_to_db,(key,nse_data['Symbol'],nse_data['Company Name'],nse_data['Series'],nse_data['Face Value'],nse_data['Purpose'],nse_data['Ex-Date'],nse_data['Record Date'],nse_data['BC Start-Date'],nse_data['BC End-Date']))
+            c.execute(
+                add_data_to_db,
+                (
+                    key,
+                    nse_data["Symbol"],
+                    nse_data["Company Name"],
+                    nse_data["Series"],
+                    nse_data["Face Value"],
+                    nse_data["Purpose"],
+                    nse_data["Ex-Date"],
+                    nse_data["Record Date"],
+                    nse_data["BC Start-Date"],
+                    nse_data["BC End-Date"],
+                ),
+            )
         except:
             print(nse_data)
     else:
@@ -137,4 +183,5 @@ for nse_data in nse_data_list:
 conn.commit()
 conn.close()
 
-print('Scraped Data Successfully')
+print("Scraped Data Successfully")
+
