@@ -1,9 +1,9 @@
 import requests
 import json
 from bs4 import BeautifulSoup as soup
+import sqlite3
 
 def money_control_ca_scraper():
-
     ca_list=[]
 
     res=requests.get('https://www.moneycontrol.com/stocks/marketinfo/upcoming_actions/home.html')
@@ -92,5 +92,34 @@ def money_control_ca_scraper():
         rights_scraper(rights_div)
     if(not bonus_div_is_empty):
         bonus_scraper(bonus_div)
+
+    # #Initializing the database
+    # conn=sqlite3.connect('corporate_action.db')
+    # c=conn.cursor()
+    # c_new=conn.cursor()
+    # create_table="CREATE TABLE IF NOT EXISTS latest_mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+    # c.execute(create_table)
+
+    # #Transfering the data of the latest corporate action to the storage
+    # create_table="CREATE TABLE IF NOT EXISTS mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+    # c_new.execute(create_table)
+    # c_new.execute('SELECT * FROM latest_mc_ca')
+    # add_data_to_db="INSERT INTO mc_ca VALUES (?,?,?,?,?,?)"
+    # for data in c_new:
+    #     try:
+    #         c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5]))
+    #     except:
+    #         print('Skipped')
+    # #Deleting the preexisting data from the database
+    # c.execute('DELETE FROM latest_mc_ca')
+
+    # #Adding data to the database
+    # add_data_to_db="INSERT INTO latest_mc_ca VALUES (?,?,?,?,?,?)"
+    # for data in ca_list:
+    #     uniqueKey=data[0]+data[1]+data[2]
+    #     c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4]))
+    # conn.commit()
+    # conn.close()
+    # return ('latest corporate action database updated successfully')
 
     return ca_list
