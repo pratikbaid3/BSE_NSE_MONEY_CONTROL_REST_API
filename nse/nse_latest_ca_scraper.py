@@ -1,102 +1,104 @@
+import os
 import requests
-import json
 from bs4 import BeautifulSoup as bs4
+import warnings
+import json
 import sqlite3
 
-class ScrapeError(Exception):
-    def __init__(self, org):
-        self.org = org
-        self.message = f"Cannot Scrape {org}"
-    def __str__(self):
-        return f"Some error occured while scraping {self.org}"
-
-class NSEScraper():
+class NSEScraper:
     def __init__(self):
-        self.NSE_CORPORATE_ACTION_HOMEPAGE_URL = "https://www1.nseindia.com/sme/marketinfo/corporates/actions/latestCorpActions.jsp?currentPage={}"
-        self.soup = None
         self.data = []
-        self.data_format = [
-            'Symbol',
-            'Company Name',
-            'Series',
-            'Face Value',
-            'Purpose',
-            'Ex-Date',
-            'Record Date',
-            'BC Start-Date',
-            'BC End-Date'
+        self.driver = None
+        self.soup = None
+        self.NSE_URL = (
+            "https://www.nseindia.com/api/corporates-corporateActions?index={}"
+        )
+        self.data_format_from_json = [
+            "symbol",
+            "comp",
+            "series",
+            "faceVal",
+            "subject",
+            "exDate",
+            "recDate",
+            "bcStartDate",
+            "bcEndDate",
         ]
-        self.page = 1
+        self.data_format = [
+            "Symbol",
+            "Company Name",
+            "Series",
+            "Face Value",
+            "Purpose",
+            "Ex-Date",
+            "Record Date",
+            "BC Start-Date",
+            "BC End-Date",
+        ]
 
     def __str__(self):
         return "NSE Scraper"
 
     def __repr__(self):
         return "NSE Scraper()"
-    
+
     def get_data(self):
         return self.data
 
-    def add_soup(self):
-        res = requests.get(self.NSE_CORPORATE_ACTION_HOMEPAGE_URL.format(self.page), headers={
-                           'User-Agent': 'Mozilla/5.0'})
-        status = res.status_code
-        if status == 200:
-            self.soup = bs4(res.content, features='lxml')
-        else:
-            raise ScrapeError("NSE")
+    def get_json_data(self):
+        json_data = json.dumps(self.get_data())
+        return json_data
 
-    def print_soup(self):
-        if __name__ == "__main__":
-            print(self.get_soup())
+    def convert_to_json_file(self, filename="nse.json", encoding="utf-8"):
+        with open(filename, "w") as json_file:
+            json.dump(self.get_data(), json_file, indent=4, ensure_ascii=False)
 
-    def setup(self):
-        self.add_soup()
-
-    def get_data_text(self, element):
-        not_present = ['-']
-        if element is None:
+    def get_data_text(self, text):
+        not_present = ["-"]
+        if text is None:
             return None
-        text = element.getText()
         if text in not_present:
             return None
         return text.strip()
 
     def scrape_data(self):
-        self.setup()
-        table = self.soup.find_all('table')[1]
-        scraped_corporate_datas = table.find_all('tr')
-        if len(scraped_corporate_datas) <= 1:
-            return False
-        for corporate_data in scraped_corporate_datas:
-            scraped_data = corporate_data.find_all('td')
-            if len(scraped_data) <= 0:
-                continue
-            temp_data = {}
-            for index, data in enumerate(scraped_data):
-                # Two extra columns are present, ND Start Date and ND End Date which is null
-                if index < len(self.data_format):
-                    textual_data = self.get_data_text(data)
-                    temp_data[self.data_format[index]] = textual_data
-            self.data.append(temp_data)
-        return True
+        action_type = ["equities", "debt", "mf", "sme"]
+        for typ in action_type:
+            res = requests.get(
+                self.NSE_URL.format(typ),
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+                },
+            )
+            res.raise_for_status()
+            for data in res.json():
+                temp_data = {}
+                for index, data_format_type in enumerate(self.data_format):
+                    temp_data[f"{data_format_type}"] = self.get_data_text(
+                        data[f"{self.data_format_from_json[index]}"]
+                    )
+                self.data.append(temp_data)
+
+    def get_corporate_actions(self):
+        self.scrape_data()
+        return self.data
+
+def mergeData(currData=[]):
+    old_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'nse_old.json')
+    if not os.path.exists(old_data_path):
+        warnings.warn("Scraped data for previous NSE Website is not present.")
+        return currData
     
-    def get_all_corporate_actions(self):
-        status = self.scrape_data()
-        if status:
-            self.page += 1
-            self.get_all_corporate_actions()
+    prevData = []
+    with open(old_data_path) as fd:
+        prevData = json.load(fd)
+    return [*currData, *prevData]
 
+nse = NSEScraper()
+currData = nse.get_corporate_actions()
+nse_data_list = mergeData(currData)
 
-    def display_data(self):
-        if __name__ == "__main__":
-            print(self.get_data())
-#Initializing the scraper
-nse=NSEScraper()
-nse.get_all_corporate_actions()
-nse_data_list=nse.get_data()
-
-#Initializing DB
+# Initializing DB
 conn=sqlite3.connect('corporate_action.db')
 c=conn.cursor()
 c_new=conn.cursor()
@@ -113,13 +115,15 @@ for data in c_new:
         c.execute(add_data_to_db,(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
     except:
         print('Skipped')
-        
+
 #Deleting the pre-existing data from the database
 c.execute('DELETE FROM latest_nse_ca')
 
 
 #Refreshing the latest ca db
 add_data_to_db="INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
+
+print(nse_data_list)
 
 for nse_data in nse_data_list:
     if(nse_data['Ex-Date']!=None):
@@ -129,7 +133,7 @@ for nse_data in nse_data_list:
         except:
             print(nse_data)
     else:
-        print(nse_data)
+        pass
 conn.commit()
 conn.close()
 

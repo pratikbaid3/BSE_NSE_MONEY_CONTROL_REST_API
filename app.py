@@ -18,7 +18,7 @@ from nse import nse_company_ca
 #MoneyControl Imports
 from money_control import money_control_upcoming_ca_scraper
 
-app=Flask(__name__)
+app=Flask(__name__, static_url_path='/public', static_folder='public/')
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.secret_key='Pratik'
 api=Api(app)
