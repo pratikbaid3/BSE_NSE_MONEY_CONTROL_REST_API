@@ -62,6 +62,10 @@ class NSEScraper:
         return text.strip()
 
     def scrape_data(self):
+        proxyDict = {
+              "http"  : os.environ.get('FIXIE_URL', ''),
+              "https" : os.environ.get('FIXIE_URL', '')
+            }
         action_type = ["equities", "debt", "mf", "sme"]
         chrome_options = webdriver.ChromeOptions()
         chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -70,7 +74,7 @@ class NSEScraper:
         chrome_options.add_argument("--no-sandbox")
         driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
         for typ in action_type:
-            driver.get(self.NSE_URL.format(typ))
+            driver.get(self.NSE_URL.format(typ),proxies=proxyDict)
             res = bs4(driver.page_source, features='lxml')
             res = json.loads(res.find('pre').contents[0])
             for data in res:
