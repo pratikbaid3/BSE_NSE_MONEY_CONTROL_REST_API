@@ -1,0 +1,135 @@
+,company_name,purpose,anouncement,record_date,ex-date,bc_start_date,bc_end_date,nd_start_date,nd_end_date,actual_payment_date
+1,Kuantum Papers,SPLITS from Old FV 10 to New FV 1,None,None,14-07-2020,None,None,None,None,None
+2,Kemp and Co,Final DIVIDEND of 5.00,29-06-2020,-,21-09-2020,None,None,None,None,None
+3,Kkalpana Ind,Final DIVIDEND of 6.00,29-06-2020,-,21-09-2020,None,None,None,None,None
+4,Creative Periph,Final DIVIDEND of 5.00,25-06-2020,20-09-2020,19-09-2020,None,None,None,None,None
+5,Kamdhenu,Final DIVIDEND of 5.00,29-06-2020,-,18-09-2020,None,None,None,None,None
+6,Apollo Hospital,Final DIVIDEND of 55.00,25-06-2020,-,17-09-2020,None,None,None,None,None
+7,Berger Paints,Final DIVIDEND of 30.00,23-06-2020,-,17-09-2020,None,None,None,None,None
+8,Goldiam Inter,Final DIVIDEND of 15.00,25-06-2020,-,17-09-2020,None,None,None,None,None
+9,The Indian Wood,Final DIVIDEND of 5.00,03-07-2020,-,17-09-2020,None,None,None,None,None
+10,Jindal Saw,Final DIVIDEND of 100.00,29-06-2020,-,17-09-2020,None,None,None,None,None
+11,Dhunseri Ventur,Final DIVIDEND of 5.00,03-07-2020,-,16-09-2020,None,None,None,None,None
+12,Punjab Chemical,Final DIVIDEND of 15.00,29-06-2020,-,16-09-2020,None,None,None,None,None
+13,Rossell India,Final DIVIDEND of 10.00,29-06-2020,-,15-09-2020,None,None,None,None,None
+14,Talbros Auto,Final DIVIDEND of 5.00,29-06-2020,-,15-09-2020,None,None,None,None,None
+15,FIEM Ind,Final DIVIDEND of 30.00,30-06-2020,-,11-09-2020,None,None,None,None,None
+16,Victoria Mills,Final DIVIDEND of 50.00,30-06-2020,-,11-09-2020,None,None,None,None,None
+17,HLE Glascoat,Final DIVIDEND of 25.00,22-06-2020,-,10-09-2020,None,None,None,None,None
+18,Tamil Newsprint,Final DIVIDEND of 60.00,30-06-2020,-,09-09-2020,None,None,None,None,None
+19,Rajapalayam,Final DIVIDEND of 10.00,24-06-2020,09-09-2020,08-09-2020,None,None,None,None,None
+20,Hind Rectifiers,Final DIVIDEND of 40.00,26-06-2020,-,07-09-2020,None,None,None,None,None
+21,Subros,Final DIVIDEND of 40.00,29-06-2020,-,07-09-2020,None,None,None,None,None
+22,Sika Interplant,Final DIVIDEND of 11.00,29-06-2020,-,03-09-2020,None,None,None,None,None
+23,Surya Roshni,Final DIVIDEND of 20.00,25-06-2020,04-09-2020,03-09-2020,None,None,None,None,None
+24,Electrosteel,Final DIVIDEND of 30.00,15-06-2020,-,31-08-2020,None,None,None,None,None
+25,Sarthak Metals,Final DIVIDEND of 5.00,22-06-2020,-,31-08-2020,None,None,None,None,None
+26,Josts Engineers,Final DIVIDEND of 30.00,16-06-2020,-,28-08-2020,None,None,None,None,None
+27,Abbott India,Final DIVIDEND of 1070.00,08-06-2020,-,28-08-2020,None,None,None,None,None
+28,Abbott India,Special DIVIDEND of 1430.00,09-06-2020,-,28-08-2020,None,None,None,None,None
+29,South (I) Paper,Final DIVIDEND of 15.00,25-06-2020,-,28-08-2020,None,None,None,None,None
+30,Munjal Showa,Final DIVIDEND of 225.00,30-06-2020,-,27-08-2020,None,None,None,None,None
+31,SHIL,Final DIVIDEND of 7.50,24-06-2020,-,24-08-2020,None,None,None,None,None
+32,Indian Hume,Final DIVIDEND of 100.00,29-06-2020,-,21-08-2020,None,None,None,None,None
+33,Tide Water Oil,Final DIVIDEND of 2800.00,24-06-2020,-,21-08-2020,None,None,None,None,None
+34,Lumax Inds,Final DIVIDEND of 60.00,18-06-2020,-,20-08-2020,None,None,None,None,None
+35,Sky Industries,Final DIVIDEND of 5.00,08-07-2020,-,20-08-2020,None,None,None,None,None
+36,Stanrose Financ,Final DIVIDEND of 60.00,29-06-2020,-,20-08-2020,None,None,None,None,None
+37,Unichem Labs,Final DIVIDEND of 200.00,19-06-2020,-,20-08-2020,None,None,None,None,None
+38,Everest Ind,Final DIVIDEND of 10.00,29-05-2020,20-08-2020,19-08-2020,None,None,None,None,None
+39,GMM Pfaudler,Final DIVIDEND of 100.00,05-06-2020,-,19-08-2020,None,None,None,None,None
+40,Heritage Foods,Final DIVIDEND of 50.00,27-05-2020,-,19-08-2020,None,None,None,None,None
+41,ADC India Comm,Final DIVIDEND of 20.00,20-05-2020,-,19-08-2020,None,None,None,None,None
+42,Lumax Auto Tech,Final DIVIDEND of 50.00,17-06-2020,-,19-08-2020,None,None,None,None,None
+43,Can Fin Homes,Final DIVIDEND of 100.00,15-06-2020,-,18-08-2020,None,None,None,None,None
+44,Cummins,Final DIVIDEND of 350.00,17-06-2020,18-08-2020,17-08-2020,None,None,None,None,None
+45,GPT Infra,Final DIVIDEND of 15.00,22-06-2020,-,13-08-2020,None,None,None,None,None
+46,Maruti Suzuki,Final DIVIDEND of 1200.00,13-05-2020,-,13-08-2020,None,None,None,None,None
+47,Anjani Cement,Final DIVIDEND of 50.00,29-06-2020,-,13-08-2020,None,None,None,None,None
+48,Alkem Lab,Final DIVIDEND of 150.00,05-06-2020,11-08-2020,10-08-2020,None,None,None,None,None
+49,Clariant Chem,Final DIVIDEND of 110.00,17-06-2020,-,10-08-2020,None,None,None,None,None
+50,Navin Fluorine,Final DIVIDEND of 150.00,16-06-2020,-,07-08-2020,None,None,None,None,None
+51,Vishnu Chemical,Final DIVIDEND of 10.00,02-06-2020,-,06-08-2020,None,None,None,None,None
+52,Lakshmi Elec,Final DIVIDEND of 5.00,03-06-2020,-,06-08-2020,None,None,None,None,None
+53,NGL Fine Chem,Final DIVIDEND of 35.00,29-06-2020,07-08-2020,06-08-2020,None,None,None,None,None
+54,Rane Holdings,Final DIVIDEND of 40.00,24-06-2020,07-08-2020,06-08-2020,None,None,None,None,None
+55,Sukhjit Starch,Final DIVIDEND of 20.00,12-06-2020,-,06-08-2020,None,None,None,None,None
+56,Tata Steel,Final DIVIDEND of 100.00,29-06-2020,-,06-08-2020,None,None,None,None,None
+57,YASH PAKKA LTD,Final DIVIDEND of 10.00,22-06-2020,07-08-2020,06-08-2020,None,None,None,None,None
+58,Goodyear,Final DIVIDEND of 130.00,12-06-2020,-,05-08-2020,None,None,None,None,None
+59,Granules India,Final DIVIDEND of 25.00,02-06-2020,-,05-08-2020,None,None,None,None,None
+60,Voltas,Final DIVIDEND of 400.00,29-05-2020,-,05-08-2020,None,None,None,None,None
+61,JSW Energy,Final DIVIDEND of 10.00,20-05-2020,-,04-08-2020,None,None,None,None,None
+62,JMC Projects,Final DIVIDEND of 35.00,19-05-2020,-,04-08-2020,None,None,None,None,None
+63,Polyspin Export,Final DIVIDEND of 6.00,25-06-2020,05-08-2020,04-08-2020,None,None,None,None,None
+64,Disa India,Final DIVIDEND of 25.00,03-06-2020,-,03-08-2020,None,None,None,None,None
+65,Kaycee Ind,Final DIVIDEND of 30.00,09-06-2020,04-08-2020,03-08-2020,None,None,None,None,None
+66,Bosch,Final DIVIDEND of 1050.00,22-05-2020,-,03-08-2020,None,None,None,None,None
+67,Titan Company,Final DIVIDEND of 400.00,08-06-2020,-,03-08-2020,None,None,None,None,None
+68,Kuantum Papers,Final DIVIDEND of 25.00,03-07-2020,-,30-07-2020,None,None,None,None,None
+69,Balaji Amines,Final DIVIDEND of 30.00,22-06-2020,-,30-07-2020,None,None,None,None,None
+70,Essel Propack,Final DIVIDEND of 102.50,22-05-2020,31-07-2020,30-07-2020,None,None,None,None,None
+71,Hero Motocorp,Final DIVIDEND of 1250.00,09-06-2020,-,30-07-2020,None,None,None,None,None
+72,Khaitan Chem,Final DIVIDEND of 20.00,22-06-2020,-,30-07-2020,None,None,None,None,None
+73,Matrimony.com,Final DIVIDEND of 30.00,20-05-2020,31-07-2020,30-07-2020,None,None,None,None,None
+74,Whirlpool,Final DIVIDEND of 50.00,18-06-2020,-,30-07-2020,None,None,None,None,None
+75,Alembic,Final DIVIDEND of 30.00,26-05-2020,-,29-07-2020,None,None,None,None,None
+76,Bata India,Final DIVIDEND of 80.00,26-05-2020,-,29-07-2020,None,None,None,None,None
+77,Morganite India,Final DIVIDEND of 160.00,16-06-2020,-,29-07-2020,None,None,None,None,None
+78,Gujarat Pipavav,Final DIVIDEND of 35.00,09-06-2020,-,29-07-2020,None,None,None,None,None
+79,Novartis India,Final DIVIDEND of 200.00,19-06-2020,-,29-07-2020,None,None,None,None,None
+80,Mahindra EPC,Final DIVIDEND of 12.00,15-05-2020,-,28-07-2020,None,None,None,None,None
+81,Rane Brake,Final DIVIDEND of 110.00,17-06-2020,29-07-2020,28-07-2020,None,None,None,None,None
+82,SOLARA ACTIVE P,Final DIVIDEND of 20.00,07-05-2020,-,28-07-2020,None,None,None,None,None
+83,Seshasayee Pape,Final DIVIDEND of 175.00,01-06-2020,-,28-07-2020,None,None,None,None,None
+84,Seshasayee Pape,Special DIVIDEND of 25.00,02-06-2020,-,28-07-2020,None,None,None,None,None
+85,Bayer CropScien,Final DIVIDEND of 250.00,22-05-2020,-,27-07-2020,None,None,None,None,None
+86,Trent,Final DIVIDEND of 100.00,26-05-2020,-,24-07-2020,None,None,None,None,None
+87,Paushak Ltd,Final DIVIDEND of 60.00,19-05-2020,-,24-07-2020,None,None,None,None,None
+88,A.K.Capital Ser,Final DIVIDEND of 10.00,29-06-2020,24-07-2020,23-07-2020,None,None,None,None,None
+89,Asian Paints,Final DIVIDEND of 150.00,23-06-2020,-,23-07-2020,None,None,None,None,None
+90,Capri Global,Final DIVIDEND of 10.00,11-05-2020,-,23-07-2020,None,None,None,None,None
+91,HCL Tech,Interim DIVIDEND of 0.00,03-07-2020,25-07-2020,23-07-2020,None,None,None,None,None
+92,Mahindra Logist,Final DIVIDEND of 15.00,20-05-2020,-,23-07-2020,None,None,None,None,None
+93,Orient Cement,Final DIVIDEND of 75.00,22-05-2020,-,23-07-2020,None,None,None,None,None
+94,Super Sales,Final DIVIDEND of 25.00,26-05-2020,-,23-07-2020,None,None,None,None,None
+95,Tech Mahindra,Final DIVIDEND of 100.00,30-04-2020,-,23-07-2020,None,None,None,None,None
+96,Timken,Final DIVIDEND of 500.00,05-06-2020,-,23-07-2020,None,None,None,None,None
+97,BSE Limited,Final DIVIDEND of 850.00,22-05-2020,23-07-2020,22-07-2020,None,None,None,None,None
+98,BASF,Final DIVIDEND of 30.00,26-05-2020,-,22-07-2020,None,None,None,None,None
+99,Godrej Agrovet,Final DIVIDEND of 55.00,11-05-2020,-,22-07-2020,None,None,None,None,None
+100,Indo Count,Final DIVIDEND of 30.00,12-06-2020,23-07-2020,22-07-2020,None,None,None,None,None
+101,TCPL Packaging,Final DIVIDEND of 40.00,12-06-2020,-,22-07-2020,None,None,None,None,None
+102,Wheels,Final DIVIDEND of 26.50,17-06-2020,-,22-07-2020,None,None,None,None,None
+103,Chemfab Alkalis,Final DIVIDEND of 12.50,04-06-2020,-,21-07-2020,None,None,None,None,None
+104,HIL,Final DIVIDEND of 100.00,26-05-2020,-,21-07-2020,None,None,None,None,None
+105,Vaibhav Global,Final DIVIDEND of 70.00,28-05-2020,-,21-07-2020,None,None,None,None,None
+106,Newgen Software,Final DIVIDEND of 20.00,26-05-2020,21-07-2020,20-07-2020,None,None,None,None,None
+107,Oriental Hotels,Final DIVIDEND of 20.00,03-06-2020,-,20-07-2020,None,None,None,None,None
+108,VST,Final DIVIDEND of 1030.00,21-05-2020,-,20-07-2020,None,None,None,None,None
+109,GlaxoSmithKline,Final DIVIDEND of 200.00,18-05-2020,20-07-2020,17-07-2020,None,None,None,None,None
+110,GlaxoSmithKline,Special DIVIDEND of 200.00,19-05-2020,20-07-2020,17-07-2020,None,None,None,None,None
+111,Indian Hotels,Final DIVIDEND of 50.00,10-06-2020,-,17-07-2020,None,None,None,None,None
+112,Srikalahasthi,Final DIVIDEND of 70.00,01-06-2020,-,17-07-2020,None,None,None,None,None
+113,ABB India,Final DIVIDEND of 240.00,12-02-2020,-,16-07-2020,None,None,None,None,None
+114,Astec Life,Final DIVIDEND of 15.00,05-05-2020,-,16-07-2020,None,None,None,None,None
+115,Bombay Burmah,Final DIVIDEND of 60.00,25-06-2020,-,16-07-2020,None,None,None,None,None
+116,Clariant Chem,Special DIVIDEND of 0.00,07-07-2020,18-07-2020,16-07-2020,None,None,None,None,None
+117,Coromandel Int,Final DIVIDEND of 1200.00,26-05-2020,-,16-07-2020,None,None,None,None,None
+118,Grindwell Norto,Final DIVIDEND of 150.00,20-05-2020,-,16-07-2020,None,None,None,None,None
+119,IRB Infra,Final DIVIDEND of 50.00,18-06-2020,17-07-2020,16-07-2020,None,None,None,None,None
+120,Lakshmi Machine,Final DIVIDEND of 100.00,26-05-2020,-,16-07-2020,None,None,None,None,None
+121,M&M,Final DIVIDEND of 47.00,12-06-2020,-,16-07-2020,None,None,None,None,None
+122,Piramal Enter,Final DIVIDEND of 700.00,11-05-2020,-,16-07-2020,None,None,None,None,None
+123,Tasty Bite,Final DIVIDEND of 20.00,18-05-2020,-,16-07-2020,None,None,None,None,None
+124,TCS,Interim DIVIDEND of 500.00,30-06-2020,17-07-2020,16-07-2020,None,None,None,None,None
+125,Auto Corp Goa,Final DIVIDEND of 50.00,28-05-2020,-,15-07-2020,None,None,None,None,None
+126,Petronet LNG,Final DIVIDEND of 70.00,30-06-2020,16-07-2020,15-07-2020,None,None,None,None,None
+127,Suyog Tele,Interim DIVIDEND of 5.00,06-07-2020,16-07-2020,15-07-2020,None,None,None,None,None
+128,Wendt,Final DIVIDEND of 250.00,28-05-2020,-,15-07-2020,None,None,None,None,None
+129,SKF India,Special DIVIDEND of 1300.00,07-05-2020,-,14-07-2020,None,None,None,None,None
+130,Tata Power,Final DIVIDEND of 155.00,19-05-2020,-,14-07-2020,None,None,None,None,None
+131,Elantas Beck,Final DIVIDEND of 50.00,25-02-2020,-,13-07-2020,None,None,None,None,None
+132,Dr Reddys Labs,Final DIVIDEND of 500.00,20-05-2020,-,13-07-2020,None,None,None,None,None
+133,Tata Elxsi,Final DIVIDEND of 165.00,20-04-2020,-,13-07-2020,None,None,None,None,None
+134,Wires and Fabri,Final DIVIDEND of 1.00,15-06-2020,14-07-2020,13-07-2020,None,None,None,None,None

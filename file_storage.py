@@ -5,6 +5,7 @@ import pdfkit
 
 from nse import nse_latest_ca
 from bse import bse_latest_ca
+from money_control import money_control_upcoming_ca
 
 def store_file_as_csv_pdf():
     filename = "Latest Corporate Actions"
@@ -14,6 +15,9 @@ def store_file_as_csv_pdf():
 
     store_file(f"{filename} NSE.csv", nse_latest_ca.latest_ca())
     store_file(f"{filename} NSE.pdf", nse_latest_ca.latest_ca(), 'pdf')
+
+    store_file(f"{filename} MC.csv", money_control_upcoming_ca.latest_ca())
+    store_file(f"{filename} MC.pdf", money_control_upcoming_ca.latest_ca(), 'pdf')
 
 
 def store_file(filename, data, typ="csv"):
@@ -37,3 +41,5 @@ def store_file(filename, data, typ="csv"):
         fd.write(intermediate)
         fd.close()
         pdfkit.from_file(html_file_path, pdf_file_path)
+
+store_file_as_csv_pdf()

@@ -63,10 +63,6 @@ class NSEScraper:
         return text.strip()
 
     def scrape_data(self):
-        proxies = {
-            "http": os.environ['QUOTAGUARDSTATIC_URL'],
-            "https": os.environ['QUOTAGUARDSTATIC_URL']
-        }
         action_type = ["equities", "debt", "mf", "sme"]
         headers = {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -84,7 +80,7 @@ class NSEScraper:
         }
         for typ in action_type:
             res = requests.get(
-                self.NSE_URL.format(typ), headers=headers,proxies=proxies
+                self.NSE_URL.format(typ), headers=headers,
             )
             res.raise_for_status()
             for data in res.json():
