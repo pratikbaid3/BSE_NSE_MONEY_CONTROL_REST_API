@@ -1,6 +1,6 @@
 import os
+import requests
 from bs4 import BeautifulSoup as bs4
-from selenium import webdriver
 import warnings
 import json
 import sqlite3
@@ -10,6 +10,7 @@ class NSEScraper:
     def __init__(self):
         self.data = []
         self.driver = None
+        self.soup = None
         self.NSE_URL = (
             "https://www.nseindia.com/api/corporates-corporateActions?index={}"
         )
@@ -62,29 +63,37 @@ class NSEScraper:
         return text.strip()
 
     def scrape_data(self):
-        proxyDict = {
-              "http"  : os.environ.get('FIXIE_URL', ''),
-              "https" : os.environ.get('FIXIE_URL', '')
-            }
+        proxies = {
+            "http": os.environ['QUOTAGUARDSTATIC_URL'],
+            "https": os.environ['QUOTAGUARDSTATIC_URL']
+        }
         action_type = ["equities", "debt", "mf", "sme"]
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--no-sandbox")
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+        headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en-US,en;q=0.9,bn-IN;q=0.8,bn;q=0.7,la;q=0.6",
+            "Scheme": "https",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-User": "?1",
+            "Authority": "www.nseindia.com",
+            "Cache-Control": "max-age=0",
+        }
         for typ in action_type:
-            driver.get(self.NSE_URL.format(typ),proxies=proxyDict)
-            res = bs4(driver.page_source, features='lxml')
-            res = json.loads(res.find('pre').contents[0])
-            for data in res:
+            res = requests.get(
+                self.NSE_URL.format(typ), headers=headers,proxies=proxies
+            )
+            res.raise_for_status()
+            for data in res.json():
                 temp_data = {}
                 for index, data_format_type in enumerate(self.data_format):
                     temp_data[f"{data_format_type}"] = self.get_data_text(
                         data[f"{self.data_format_from_json[index]}"]
                     )
                 self.data.append(temp_data)
-        driver.quit()
 
     def get_corporate_actions(self):
         self.scrape_data()
@@ -108,6 +117,8 @@ def mergeData(currData=[]):
 nse = NSEScraper()
 currData = nse.get_corporate_actions()
 nse_data_list = mergeData(currData)
+
+print(nse_data_list)
 
 # Initializing DB
 conn = sqlite3.connect("corporate_action.db")
@@ -147,8 +158,6 @@ c.execute("DELETE FROM latest_nse_ca")
 
 # Refreshing the latest ca db
 add_data_to_db = "INSERT INTO latest_nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
-
-print(nse_data_list)
 
 for nse_data in nse_data_list:
     if nse_data["Ex-Date"] != None:
