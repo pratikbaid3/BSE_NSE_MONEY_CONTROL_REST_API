@@ -16,8 +16,12 @@ lazy-object-proxy==1.4.3
 lxml==4.5.1
 MarkupSafe==1.1.1
 mccabe==0.6.1
+numpy==1.19.0
+pandas==1.0.5
+pdfkit==0.6.1
 PyJWT==1.4.2
 pylint==2.5.3
+python-dateutil==2.8.1
 pytz==2020.1
 requests==2.24.0
 selenium==3.141.0
@@ -26,9 +30,6 @@ soupsieve==2.0.1
 toml==0.10.1
 urllib3==1.25.9
 Werkzeug==1.0.1
+wkhtmltopdf==0.2
 wrapt==1.12.1
-uwsgi
-pandas==1.0.5
-sendgrid==6.4.3
-pdfkit==0.6.1
 xlrd==1.2.0
