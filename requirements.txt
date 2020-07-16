@@ -33,3 +33,6 @@ Werkzeug==1.0.1
 wkhtmltopdf==0.2
 wrapt==1.12.1
 xlrd==1.2.0
+uwsgi	
+sendgrid==6.4.3	
+
