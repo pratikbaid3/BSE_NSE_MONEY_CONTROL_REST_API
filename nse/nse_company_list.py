@@ -78,15 +78,15 @@ company_list = get_company_list()
 
 
 #Adding the data to the db
-conn=sqlite3.connect('corporate_action.db')
+conn=sqlite3.connect('companies.db')
 c=conn.cursor()
 c_new=conn.cursor()
-create_table="CREATE TABLE IF NOT EXISTS nse_companies (code text PRIMARY KEY UNIQUE,company text)"
+create_table="CREATE TABLE IF NOT EXISTS companies (exchange text,code text,company text)"
 c.execute(create_table)
-add_data_to_db="INSERT INTO nse_companies VALUES (?,?)"
+add_data_to_db="INSERT INTO companies VALUES (?,?,?)"
 
 for company in company_list:
-    c.execute(add_data_to_db,(company['Symbol'],company['Company Name']))
+    c.execute(add_data_to_db,('NSE',company['Symbol'],company['Company Name']))
 
 conn.commit()
 conn.close()

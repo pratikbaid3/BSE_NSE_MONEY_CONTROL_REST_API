@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as soup
 import sqlite3
 
 def money_control_get_company_names():
-    conn=sqlite3.connect('corporate_action.db')
+    conn=sqlite3.connect('companies.db')
     c=conn.cursor()
     data = []
     res = requests.get('https://www.moneycontrol.com/india/stockpricequote/',headers={'User-Agent':'Mozilla/5.0'})
@@ -22,8 +22,8 @@ def money_control_get_company_names():
         print(link.string)
         print()
         #Adding data to db
-        add_data_to_db="INSERT INTO mc_companies VALUES (?,?)"
-        c.execute(add_data_to_db,(money_control_get_company_bse(link['href']),link.string))
+        add_data_to_db="INSERT INTO companies VALUES (?,?,?)"
+        c.execute(add_data_to_db,('MC',money_control_get_company_bse(link['href']),link.string))
         conn.commit()
 
     print('Completed Scraping')
@@ -36,10 +36,10 @@ def money_control_get_company_bse(link):
 	return bse
 
 #Initializing the db
-conn=sqlite3.connect('corporate_action.db')
+conn=sqlite3.connect('companies.db')
 c=conn.cursor()
 c_new=conn.cursor()
-create_table="CREATE TABLE IF NOT EXISTS mc_companies (code text PRIMARY KEY UNIQUE,company text)"
+create_table="CREATE TABLE IF NOT EXISTS companies (exchange text,code text,company text)"
 c.execute(create_table)
 money_control_get_company_names()
 conn.commit()
