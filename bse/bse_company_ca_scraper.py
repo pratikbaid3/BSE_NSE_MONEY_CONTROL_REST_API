@@ -19,7 +19,7 @@ def company_ca_scraper(security_name,security_code):
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--incognito')
     options.add_argument("--headless")
-    driver = webdriver.Chrome("/Users/pratikbaid/Developer/chromedriver", options=options)
+    driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver", options=options)
 
     driver.get('https://www.bseindia.com/corporates/corporate_act.aspx')
     name_xpath = '//*[@id="ContentPlaceHolder1_SmartSearch_smartSearch"]'
@@ -29,8 +29,8 @@ def company_ca_scraper(security_name,security_code):
     arg2_xpath = '//*[@id="ContentPlaceHolder1_hf_scripcode"]'
     arg1 = driver.find_element_by_xpath(arg1_xpath)
     arg2 = driver.find_element_by_xpath(arg2_xpath)
-    driver.execute_script(f"arguments[0].value = '{security_code}'", arg1)
-    driver.execute_script(f"arguments[0].value = '{security_code}'", arg2)
+    driver.execute_script(f'arguments[0].value = "{security_code}"', arg1)
+    driver.execute_script(f'arguments[0].value = "{security_code}"', arg2)
     driver.find_element_by_xpath(submit_xpath).click()
 
     pageSource=driver.page_source
@@ -94,30 +94,36 @@ c=conn.cursor()
 c_new=conn.cursor()
 create_table="CREATE TABLE IF NOT EXISTS bse_ca (key text PRIMARY KEY UNIQUE,security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
 c.execute(create_table)
+create_table="CREATE TABLE IF NOT EXISTS not_scraped(code text,company text)"
+c.execute(create_table)
 
-#TODO: Run through the database and for each company scrape the data and feed it into the database
 c_new.execute('SELECT * FROM bse_companies')
 company_list=[]
 for comp in c_new:
     company_list.append(comp)
 list_len=len(company_list)
-for i in range(141,list_len):
+for i in range(436,list_len):
     # Adding data to the database
     company=company_list[i]
     dataList=company_ca_scraper(company[1],company[0])
-    print(dataList)
+    #print(dataList)
     add_data_to_db="INSERT INTO bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-    for data in dataList:
-        uniqueKey=data[0]+data[2]+data[3]
-        try:
-            c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
-        except:
-            print('Skipped')
-    conn.commit()
+    companies_not_scraped='INSERT INTO not_scraped VALUES(?,?)'
     print(f'#${i}')
-    print(f'Scraping Done for ${company[1]}')
-    print('SLEEPING')
-    time.sleep(30)
-    print('SLEEP OVER')
+    print(f'Scraping ${company[1]}')
+    if(len(dataList)==0):
+        print('NO DATA')
+        c.execute(companies_not_scraped,(company[0],company[1]))
+    else:
+        for data in dataList:
+            uniqueKey=data[0]+data[2]+data[3]
+            try:
+                c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+            except:
+                print('Skipped')
+        print('SLEEPING')
+        time.sleep(30)
+        print('SLEEP OVER')
+    conn.commit()
 conn.close()
 print ('Corporate Action Added Successfully')
