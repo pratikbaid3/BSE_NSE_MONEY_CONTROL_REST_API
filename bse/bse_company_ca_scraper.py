@@ -5,6 +5,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 import sqlite3
+import time
 
 def company_ca_scraper(security_name,security_code):
     # chrome_options = webdriver.ChromeOptions()
@@ -84,20 +85,6 @@ def company_ca_scraper(security_name,security_code):
                 dataList.append(data)
 
     ca_array=[]
-    # for data in dataList:
-    #     corporate_action={
-    #         'secuarity_code':data[0],
-    #         'secuarity_name':data[1],
-    #         'ex_date':data[2],
-    #         'purpose':data[3],
-    #         'record_date':data[4],
-    #         'bc_start_date':data[5],
-    #         'bc_end_date':data[6],
-    #         'nd_start_date':data[7],
-    #         'nd_end_date':data[8],
-    #         'actual_payment_date':data[9]
-    #     }
-    #     ca_array.append(corporate_action)
     return(dataList)
 
 
@@ -108,12 +95,27 @@ c_new=conn.cursor()
 create_table="CREATE TABLE IF NOT EXISTS bse_ca (key text PRIMARY KEY UNIQUE,security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
 c.execute(create_table)
 
-#Adding data to the database
-dataList=company_ca_scraper('BOMDYEING','500020')
-add_data_to_db="INSERT INTO bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-for data in dataList:
-    uniqueKey=data[0]+data[2]+data[3]
-    c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
-conn.commit()
+#TODO: Run through the database and for each company scrape the data and feed it into the database
+c_new.execute('SELECT * FROM bse_companies')
+company_list=[]
+for comp in c_new:
+    company_list.append(comp)
+list_len=len(company_list)
+for i in range(77,list_len):
+    # Adding data to the database
+    company=company_list[i]
+    dataList=company_ca_scraper(company[1],company[0])
+    print(dataList)
+    add_data_to_db="INSERT INTO bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+    for data in dataList:
+        uniqueKey=data[0]+data[2]+data[3]
+        try:
+            c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
+        except:
+            print('Skipped')
+    conn.commit()
+    print(f'#${i}')
+    print(f'Scraping Done for ${company[1]}')
+    time.sleep(5)
 conn.close()
-print ('latest corporate action database updated successfully')
+print ('Corporate Action Added Successfully')
