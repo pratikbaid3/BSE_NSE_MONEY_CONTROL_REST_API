@@ -101,7 +101,7 @@ company_list=[]
 for comp in c_new:
     company_list.append(comp)
 list_len=len(company_list)
-for i in range(77,list_len):
+for i in range(113,list_len):
     # Adding data to the database
     company=company_list[i]
     dataList=company_ca_scraper(company[1],company[0])
@@ -116,6 +116,5 @@ for i in range(77,list_len):
     conn.commit()
     print(f'#${i}')
     print(f'Scraping Done for ${company[1]}')
-    time.sleep(5)
 conn.close()
 print ('Corporate Action Added Successfully')
