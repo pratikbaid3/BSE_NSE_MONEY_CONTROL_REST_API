@@ -1,102 +1,102 @@
 ,security_code,security_name,ex_date,purpose,record_date,bc_start_date,bc_end_date,nd_start_date,nd_end_date,actual_payment_date
 1,511333,VLSFINANCE, ,Dividend - Rs. - 1.5000,-,24 Oct 2020,30 Oct 2020, , ,-
-2,500002,ABB,16 Jul 2020,Dividend - Rs. - 4.8000,-,18 Jul 2020,24 Jul 2020,13 Jul 2020,16 Jul 2020,-
-3,533138,ASTEC,16 Jul 2020,Final Dividend - Rs. - 1.5000,-,18 Jul 2020,21 Jul 2020,13 Jul 2020,16 Jul 2020,-
-4,501425,BBTC,16 Jul 2020,Dividend - Rs. - 1.2000,-,18 Jul 2020,24 Jul 2020,13 Jul 2020,16 Jul 2020,-
-5,506390,CLNINDIA,16 Jul 2020,Special Dividend - Rs. - 140.0000,18 Jul 2020, , ,13 Jul 2020,16 Jul 2020,-
-6,506395,COROMANDEL,16 Jul 2020,Final Dividend - Rs. - 12.0000,-,18 Jul 2020,24 Jul 2020,13 Jul 2020,16 Jul 2020,-
-7,506076,GRINDWELL,16 Jul 2020,Dividend - Rs. - 7.5000,-,18 Jul 2020,24 Jul 2020,13 Jul 2020,16 Jul 2020,-
-8,500252,LAXMIMACH,16 Jul 2020,Dividend - Rs. - 10.0000,-,18 Jul 2020,24 Jul 2020,13 Jul 2020,16 Jul 2020,-
-9,500520,M&M,16 Jul 2020,Dividend - Rs. - 2.3500,-,18 Jul 2020,07 Aug 2020,13 Jul 2020,16 Jul 2020,-
-10,500302,PEL,16 Jul 2020,Final Dividend - Rs. - 14.0000,-,18 Jul 2020,30 Jul 2020,13 Jul 2020,16 Jul 2020,-
-11,519091,TASTYBIT,16 Jul 2020,Final Dividend - Rs. - 2.0000,-,18 Jul 2020,06 Aug 2020,13 Jul 2020,16 Jul 2020,-
-12,500660,GLAXO,17 Jul 2020,Final Dividend - Rs. - 20.0000,20 Jul 2020, , ,13 Jul 2020,17 Jul 2020,-
-13,500660,GLAXO,17 Jul 2020,Special Dividend - Rs. - 20.0000,20 Jul 2020, , ,13 Jul 2020,17 Jul 2020,-
-14,500850,INDHOTEL,17 Jul 2020,Final Dividend - Rs. - 0.5000,-,21 Jul 2020,27 Jul 2020,14 Jul 2020,20 Jul 2020,-
-15,513605,SRIPIPES,17 Jul 2020,Dividend - Rs. - 7.0000,-,21 Jul 2020,27 Jul 2020,14 Jul 2020,20 Jul 2020,-
-16,540900,NEWGEN,20 Jul 2020,Final Dividend - Rs. - 2.0000,21 Jul 2020, , ,14 Jul 2020,20 Jul 2020,-
-17,500314,ORIENTHOT,20 Jul 2020,Final Dividend - Rs. - 0.2000,-,22 Jul 2020,28 Jul 2020,15 Jul 2020,21 Jul 2020,-
-18,509966,VSTIND,20 Jul 2020,Final Dividend - Rs. - 103.0000,-,22 Jul 2020,29 Jul 2020,15 Jul 2020,21 Jul 2020,-
-19,541269,CHEMFABALKA,21 Jul 2020,Final Dividend - Rs. - 1.2500,-,23 Jul 2020,29 Jul 2020,16 Jul 2020,22 Jul 2020,-
-20,509675,HIL,21 Jul 2020,Final Dividend - Rs. - 10.0000,-,23 Jul 2020,29 Jul 2020,16 Jul 2020,22 Jul 2020,-
-21,532156,VAIBHAVGBL,21 Jul 2020,Final Dividend - Rs. - 7.0000,-,23 Jul 2020,23 Jul 2020,16 Jul 2020,22 Jul 2020,-
-22,541865,ASRL,22 Jul 2020,Bonus issue 3:4,23 Jul 2020, , ,16 Jul 2020,22 Jul 2020,-
-23,500042,BASF,22 Jul 2020,Dividend - Rs. - 3.0000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
-24,540743,GODREJAGRO,22 Jul 2020,Final Dividend - Rs. - 5.5000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
-25,521016,ICIL,22 Jul 2020,Final Dividend - Rs. - 0.6000,23 Jul 2020, , ,16 Jul 2020,22 Jul 2020,-
-26,523301,TCPLPACK,22 Jul 2020,Dividend - Rs. - 4.0000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
-27,590073,WHEELS,22 Jul 2020,Final Dividend - Rs. - 2.6500,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
-28,530499,AKCAPIT,23 Jul 2020,Final Dividend - Rs. - 1.0000,24 Jul 2020, , ,17 Jul 2020,23 Jul 2020,-
-29,500820,ASIANPAINT,23 Jul 2020,Final Dividend - Rs. - 1.5000,-,25 Jul 2020,05 Aug 2020,20 Jul 2020,23 Jul 2020,-
-30,531595,CGCL,23 Jul 2020,Dividend - Rs. - 0.2000,-,25 Jul 2020,31 Jul 2020,20 Jul 2020,23 Jul 2020,-
-31,532281,HCLTECH,23 Jul 2020,Interim Dividend - Rs. - 2.0000,25 Jul 2020, , ,20 Jul 2020,23 Jul 2020,-
-32,540768,MAHLOG,23 Jul 2020,Final Dividend - Rs. - 1.5000,-,25 Jul 2020,30 Jul 2020,20 Jul 2020,23 Jul 2020,-
-33,535754,ORIENTCEM,23 Jul 2020,Final Dividend - Rs. - 0.7500,-,25 Jul 2020,31 Jul 2020,20 Jul 2020,23 Jul 2020,-
-34,532784,SOBHA,23 Jul 2020,Dividend - Rs. - 7.0000,-,25 Jul 2020,25 Jul 2020,20 Jul 2020,23 Jul 2020,-
-35,512527,SUPER,23 Jul 2020,Final Dividend - Rs. - 2.5000,-,25 Jul 2020,30 Jul 2020,20 Jul 2020,23 Jul 2020,-
-36,532755,TECHM,23 Jul 2020,Final Dividend - Rs. - 5.0000,-,25 Jul 2020,28 Jul 2020,20 Jul 2020,23 Jul 2020,-
-37,522113,TIMKEN,23 Jul 2020,Final Dividend - Rs. - 50.0000,-,25 Jul 2020,20 Aug 2020,20 Jul 2020,23 Jul 2020,-
-38,532742,PAUSHAKLTD,24 Jul 2020,Final Dividend - Rs. - 6.0000,-,28 Jul 2020,04 Aug 2020, , ,-
-39,506605,POLYCHEM,24 Jul 2020,Dividend - Rs. - 12.5000,-,28 Jul 2020,04 Aug 2020, , ,-
-40,532531,STAR,24 Jul 2020,Final Dividend - Rs. - 2.0000,27 Jul 2020, , ,20 Jul 2020,24 Jul 2020,-
-41,500251,TRENT,24 Jul 2020,Dividend - Rs. - 1.0000,-,28 Jul 2020,30 Jul 2020, , ,-
-42,506285,BAYERCROP,27 Jul 2020,Final Dividend - Rs. - 25.0000,-,29 Jul 2020,07 Aug 2020, , ,-
-43,506532,NITTAGELA,27 Jul 2020,Dividend - Rs. - 2.5000,-,29 Jul 2020,04 Aug 2020, , ,-
-44,532482,GRANULES,28 Jul 2020,Interim Dividend - Rs. - 0.2500,29 Jul 2020, , , , ,-
-45,531531,HATSUN,28 Jul 2020,Interim Dividend,29 Jul 2020, , , , ,-
-46,523754,MAHEPC,28 Jul 2020,Dividend - Rs. - 1.2000,-,30 Jul 2020,03 Aug 2020, , ,-
-47,532987,RBL,28 Jul 2020,Final Dividend - Rs. - 11.0000,29 Jul 2020, , , , ,-
-48,502450,SESHAPAPER,28 Jul 2020,Dividend - Rs. - 3.5000,-,30 Jul 2020,08 Aug 2020, , ,-
-49,502450,SESHAPAPER,28 Jul 2020,Special Dividend - Rs. - 0.5000,-,30 Jul 2020,08 Aug 2020, , ,-
-50,541540,SOLARA,28 Jul 2020,Dividend - Rs. - 2.0000,-,30 Jul 2020,04 Aug 2020, , ,-
-51,542667,WORL,28 Jul 2020,Bonus issue 1:1,29 Jul 2020, , , , ,-
-52,506235,ALEMBICLTD,29 Jul 2020,Final Dividend - Rs. - 0.6000,-,31 Jul 2020,07 Aug 2020, , ,-
-53,500043,BATAINDIA,29 Jul 2020,Dividend - Rs. - 4.0000,-,31 Jul 2020,06 Aug 2020, , ,-
-54,507488,GMBREW,29 Jul 2020,Final Dividend - Rs. - 3.0000,-,31 Jul 2020,06 Aug 2020, , ,-
-55,533248,GPPL,29 Jul 2020,Final Dividend - Rs. - 3.5000,-,31 Jul 2020,06 Aug 2020, , ,-
-56,523160,MORGANITE,29 Jul 2020,Final Dividend - Rs. - 16.0000,-,31 Jul 2020,06 Aug 2020, , ,-
-57,500672,NOVARTIND,29 Jul 2020,Final Dividend - Rs. - 10.0000,-,31 Jul 2020,07 Aug 2020, , ,-
-58,532538,ULTRACEMCO,29 Jul 2020,Final Dividend - Rs. - 13.0000,-,31 Jul 2020,12 Aug 2020, , ,-
-59,530999,BALAMINES,30 Jul 2020,Final Dividend - Rs. - 0.6000,-,01 Aug 2020,08 Aug 2020, , ,-
-60,501430,BOMBCYC,30 Jul 2020,Final Dividend - Rs. - 5.0000,31 Jul 2020, , , , ,-
-61,500280,CENTENKA,30 Jul 2020,Dividend - Rs. - 8.0000,-,03 Aug 2020,05 Aug 2020, , ,-
-62,500135,ESSELPRO,30 Jul 2020,Final Dividend - Rs. - 2.0500,31 Jul 2020, , , , ,-
-63,505714,GABRIEL,30 Jul 2020,Final Dividend - Rs. - 0.8500,-,01 Aug 2020,07 Aug 2020, , ,-
-64,500182,HEROMOTOCO,30 Jul 2020,Final Dividend - Rs. - 25.0000,-,03 Aug 2020,12 Aug 2020, , ,-
-65,500696,HINDUNILVR,30 Jul 2020,Special Dividend,31 Jul 2020, , , , ,-
-66,542446,JONJUA,30 Jul 2020,Bonus issue 1:43,31 Jul 2020, , , , ,-
-67,507794,KHAICHEM,30 Jul 2020,Dividend - Rs. - 0.2000,-,01 Aug 2020,07 Aug 2020, , ,-
-68,526423,KRITIIND,30 Jul 2020,Final Dividend - Rs. - 0.1500,-,02 Aug 2020,08 Aug 2020, , ,-
-69,533210,KRITINUT,30 Jul 2020,Dividend - Rs. - 0.1800,-,02 Aug 2020,08 Aug 2020, , ,-
-70,532937,KUANTUM,30 Jul 2020,Dividend - Rs. - 2.5000,-,01 Aug 2020,07 Aug 2020, , ,-
-71,540704,MATRIMONY,30 Jul 2020,Final Dividend - Rs. - 1.5000,31 Jul 2020, , , , ,-
-72,541301,ORIENTELEC,30 Jul 2020,Final Dividend - Rs. - 0.5000,-,01 Aug 2020,07 Aug 2020, , ,-
-73,523708,EIMCOELECO,31 Jul 2020,Dividend - Rs. - 5.0000,-,04 Aug 2020,10 Aug 2020, , ,-
-74,500530,BOSCHLTD,03 Aug 2020,Final Dividend - Rs. - 105.0000,-,05 Aug 2020,27 Aug 2020, , ,-
-75,500068,DISAQ,03 Aug 2020,Final Dividend - Rs. - 2.5000,-,05 Aug 2020,12 Aug 2020, , ,-
-76,504084,KAYCEEI,03 Aug 2020,Final Dividend - Rs. - 30.0000,04 Aug 2020, , , , ,-
-77,500114,TITAN,03 Aug 2020,Dividend - Rs. - 4.0000,-,05 Aug 2020,11 Aug 2020, , ,-
-78,500092,CRISIL,04 Aug 2020,Interim Dividend,05 Aug 2020, , , , ,-
-79,522263,JMCPROJECT,04 Aug 2020,Final Dividend - Rs. - 0.7000,-,06 Aug 2020,11 Aug 2020, , ,-
-80,533148,JSWENERGY,04 Aug 2020,Final Dividend - Rs. - 1.0000,-,06 Aug 2020,13 Aug 2020, , ,-
-81,506528,KELENRG,04 Aug 2020,Final Dividend - Rs. - 1.5000,-,06 Aug 2020,12 Aug 2020, , ,-
-82,539354,POLYSPIN,04 Aug 2020,Final Dividend - Rs. - 0.6000,05 Aug 2020, , , , ,-
-83,509472,CRAVATEX,05 Aug 2020,Final Dividend - Rs. - 1.0000,-,07 Aug 2020,13 Aug 2020, , ,-
-84,500168,GOODYEAR,05 Aug 2020,Final Dividend - Rs. - 13.0000,-,07 Aug 2020,13 Aug 2020, , ,-
-85,532482,GRANULES,05 Aug 2020,Final Dividend - Rs. - 0.2500,-,07 Aug 2020,13 Aug 2020, , ,-
-86,500510,LT,05 Aug 2020,Final Dividend - Rs. - 8.0000,-,07 Aug 2020,13 Aug 2020, , ,-
-87,531201,SHILCTECH,05 Aug 2020,Dividend - Rs. - 1.0000,-,07 Aug 2020,14 Aug 2020, , ,-
-88,500575,VOLTAS,05 Aug 2020,Dividend - Rs. - 4.0000,-,07 Aug 2020,21 Aug 2020, , ,-
-89,504258,LAKSELEC,06 Aug 2020,Dividend - Rs. - 0.5000,-,08 Aug 2020,14 Aug 2020, , ,-
-90,524774,NGLFINE,06 Aug 2020,Final Dividend - Rs. - 1.7500,07 Aug 2020, , , , ,-
-91,505800,RANEHOLDIN,06 Aug 2020,Final Dividend - Rs. - 4.0000,07 Aug 2020, , , , ,-
-92,524542,SUKHJITS,06 Aug 2020,Dividend - Rs. - 2.0000,-,08 Aug 2020,13 Aug 2020, , ,-
-93,500470,TATASTEEL,06 Aug 2020,Final Dividend - Rs. - 10.0000,-,08 Aug 2020,20 Aug 2020, , ,-
-94,516072,VISHNU,06 Aug 2020,Dividend - Rs. - 1.0000,-,08 Aug 2020,14 Aug 2020, , ,-
-95,500238,WHIRLPOOL,06 Aug 2020,Final Dividend - Rs. - 5.0000,-,08 Aug 2020,21 Aug 2020, , ,-
-96,516030,YASHPAKKA,06 Aug 2020,Final Dividend - Rs. - 1.0000,07 Aug 2020, , , , ,-
-97,532504,NAVINFLUOR,07 Aug 2020,Final Dividend - Rs. - 3.0000,-,11 Aug 2020,14 Aug 2020, , ,-
-98,539523,ALKEM,10 Aug 2020,Final Dividend - Rs. - 3.0000,11 Aug 2020, , , , ,-
+2,500660,GLAXO,17 Jul 2020,Final Dividend - Rs. - 20.0000,20 Jul 2020, , ,13 Jul 2020,17 Jul 2020,-
+3,500660,GLAXO,17 Jul 2020,Special Dividend - Rs. - 20.0000,20 Jul 2020, , ,13 Jul 2020,17 Jul 2020,-
+4,500850,INDHOTEL,17 Jul 2020,Final Dividend - Rs. - 0.5000,-,21 Jul 2020,27 Jul 2020,14 Jul 2020,20 Jul 2020,-
+5,513605,SRIPIPES,17 Jul 2020,Dividend - Rs. - 7.0000,-,21 Jul 2020,27 Jul 2020,14 Jul 2020,20 Jul 2020,-
+6,540900,NEWGEN,20 Jul 2020,Final Dividend - Rs. - 2.0000,21 Jul 2020, , ,14 Jul 2020,20 Jul 2020,-
+7,500314,ORIENTHOT,20 Jul 2020,Final Dividend - Rs. - 0.2000,-,22 Jul 2020,28 Jul 2020,15 Jul 2020,21 Jul 2020,-
+8,509966,VSTIND,20 Jul 2020,Final Dividend - Rs. - 103.0000,-,22 Jul 2020,29 Jul 2020,15 Jul 2020,21 Jul 2020,-
+9,541269,CHEMFABALKA,21 Jul 2020,Final Dividend - Rs. - 1.2500,-,23 Jul 2020,29 Jul 2020,16 Jul 2020,22 Jul 2020,-
+10,509675,HIL,21 Jul 2020,Final Dividend - Rs. - 10.0000,-,23 Jul 2020,29 Jul 2020,16 Jul 2020,22 Jul 2020,-
+11,532156,VAIBHAVGBL,21 Jul 2020,Final Dividend - Rs. - 7.0000,-,23 Jul 2020,23 Jul 2020,16 Jul 2020,22 Jul 2020,-
+12,541865,ASRL,22 Jul 2020,Bonus issue 3:4,23 Jul 2020, , ,16 Jul 2020,22 Jul 2020,-
+13,500042,BASF,22 Jul 2020,Dividend - Rs. - 3.0000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
+14,540743,GODREJAGRO,22 Jul 2020,Final Dividend - Rs. - 5.5000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
+15,521016,ICIL,22 Jul 2020,Final Dividend - Rs. - 0.6000,23 Jul 2020, , ,16 Jul 2020,22 Jul 2020,-
+16,532720,M&MFIN,22 Jul 2020,Right Issue of Equity Shares ,23 Jul 2020, , ,21 Jul 2020,22 Jul 2020,-
+17,523301,TCPLPACK,22 Jul 2020,Dividend - Rs. - 4.0000,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
+18,590073,WHEELS,22 Jul 2020,Final Dividend - Rs. - 2.6500,-,24 Jul 2020,30 Jul 2020,17 Jul 2020,23 Jul 2020,-
+19,530499,AKCAPIT,23 Jul 2020,Final Dividend - Rs. - 1.0000,24 Jul 2020, , ,17 Jul 2020,23 Jul 2020,-
+20,500820,ASIANPAINT,23 Jul 2020,Final Dividend - Rs. - 1.5000,-,25 Jul 2020,05 Aug 2020,20 Jul 2020,23 Jul 2020,-
+21,531595,CGCL,23 Jul 2020,Dividend - Rs. - 0.2000,-,25 Jul 2020,31 Jul 2020,20 Jul 2020,23 Jul 2020,-
+22,532622,GDL,23 Jul 2020,Right Issue of Equity Shares ,24 Jul 2020, , ,21 Jul 2020,23 Jul 2020,-
+23,532281,HCLTECH,23 Jul 2020,Interim Dividend - Rs. - 2.0000,25 Jul 2020, , ,20 Jul 2020,23 Jul 2020,-
+24,540768,MAHLOG,23 Jul 2020,Final Dividend - Rs. - 1.5000,-,25 Jul 2020,30 Jul 2020,20 Jul 2020,23 Jul 2020,-
+25,535754,ORIENTCEM,23 Jul 2020,Final Dividend - Rs. - 0.7500,-,25 Jul 2020,31 Jul 2020,20 Jul 2020,23 Jul 2020,-
+26,532784,SOBHA,23 Jul 2020,Dividend - Rs. - 7.0000,-,25 Jul 2020,25 Jul 2020,20 Jul 2020,23 Jul 2020,-
+27,512527,SUPER,23 Jul 2020,Final Dividend - Rs. - 2.5000,-,25 Jul 2020,30 Jul 2020,20 Jul 2020,23 Jul 2020,-
+28,532755,TECHM,23 Jul 2020,Final Dividend - Rs. - 5.0000,-,25 Jul 2020,28 Jul 2020,20 Jul 2020,23 Jul 2020,-
+29,522113,TIMKEN,23 Jul 2020,Final Dividend - Rs. - 50.0000,-,25 Jul 2020,20 Aug 2020,20 Jul 2020,23 Jul 2020,-
+30,532742,PAUSHAKLTD,24 Jul 2020,Final Dividend - Rs. - 6.0000,-,28 Jul 2020,04 Aug 2020,21 Jul 2020,27 Jul 2020,-
+31,506605,POLYCHEM,24 Jul 2020,Dividend - Rs. - 12.5000,-,28 Jul 2020,04 Aug 2020,21 Jul 2020,27 Jul 2020,-
+32,532531,STAR,24 Jul 2020,Final Dividend - Rs. - 2.0000,27 Jul 2020, , ,20 Jul 2020,24 Jul 2020,-
+33,500251,TRENT,24 Jul 2020,Dividend - Rs. - 1.0000,-,28 Jul 2020,30 Jul 2020,21 Jul 2020,27 Jul 2020,-
+34,506285,BAYERCROP,27 Jul 2020,Final Dividend - Rs. - 25.0000,-,29 Jul 2020,07 Aug 2020, , ,-
+35,506532,NITTAGELA,27 Jul 2020,Dividend - Rs. - 2.5000,-,29 Jul 2020,04 Aug 2020, , ,-
+36,532482,GRANULES,28 Jul 2020,Interim Dividend - Rs. - 0.2500,29 Jul 2020, , , , ,-
+37,531531,HATSUN,28 Jul 2020,Interim Dividend,29 Jul 2020, , , , ,-
+38,523754,MAHEPC,28 Jul 2020,Dividend - Rs. - 1.2000,-,30 Jul 2020,03 Aug 2020, , ,-
+39,532987,RBL,28 Jul 2020,Final Dividend - Rs. - 11.0000,29 Jul 2020, , , , ,-
+40,502450,SESHAPAPER,28 Jul 2020,Dividend - Rs. - 3.5000,-,30 Jul 2020,08 Aug 2020, , ,-
+41,502450,SESHAPAPER,28 Jul 2020,Special Dividend - Rs. - 0.5000,-,30 Jul 2020,08 Aug 2020, , ,-
+42,541540,SOLARA,28 Jul 2020,Dividend - Rs. - 2.0000,-,30 Jul 2020,04 Aug 2020, , ,-
+43,542667,WORL,28 Jul 2020,Bonus issue 1:1,29 Jul 2020, , , , ,-
+44,506235,ALEMBICLTD,29 Jul 2020,Final Dividend - Rs. - 0.6000,-,31 Jul 2020,07 Aug 2020, , ,-
+45,500043,BATAINDIA,29 Jul 2020,Dividend - Rs. - 4.0000,-,31 Jul 2020,06 Aug 2020, , ,-
+46,507488,GMBREW,29 Jul 2020,Final Dividend - Rs. - 3.0000,-,31 Jul 2020,06 Aug 2020, , ,-
+47,533248,GPPL,29 Jul 2020,Final Dividend - Rs. - 3.5000,-,31 Jul 2020,06 Aug 2020, , ,-
+48,523160,MORGANITE,29 Jul 2020,Final Dividend - Rs. - 16.0000,-,31 Jul 2020,06 Aug 2020, , ,-
+49,500672,NOVARTIND,29 Jul 2020,Final Dividend - Rs. - 10.0000,-,31 Jul 2020,07 Aug 2020, , ,-
+50,532538,ULTRACEMCO,29 Jul 2020,Final Dividend - Rs. - 13.0000,-,31 Jul 2020,12 Aug 2020, , ,-
+51,530999,BALAMINES,30 Jul 2020,Final Dividend - Rs. - 0.6000,-,01 Aug 2020,08 Aug 2020, , ,-
+52,501430,BOMBCYC,30 Jul 2020,Final Dividend - Rs. - 5.0000,31 Jul 2020, , , , ,-
+53,500280,CENTENKA,30 Jul 2020,Dividend - Rs. - 8.0000,-,03 Aug 2020,05 Aug 2020, , ,-
+54,500135,ESSELPRO,30 Jul 2020,Final Dividend - Rs. - 2.0500,31 Jul 2020, , , , ,-
+55,505714,GABRIEL,30 Jul 2020,Final Dividend - Rs. - 0.8500,-,01 Aug 2020,07 Aug 2020, , ,-
+56,500182,HEROMOTOCO,30 Jul 2020,Final Dividend - Rs. - 25.0000,-,03 Aug 2020,12 Aug 2020, , ,-
+57,500696,HINDUNILVR,30 Jul 2020,Special Dividend,31 Jul 2020, , , , ,-
+58,542446,JONJUA,30 Jul 2020,Bonus issue 1:43,31 Jul 2020, , , , ,-
+59,507794,KHAICHEM,30 Jul 2020,Dividend - Rs. - 0.2000,-,01 Aug 2020,07 Aug 2020, , ,-
+60,526423,KRITIIND,30 Jul 2020,Final Dividend - Rs. - 0.1500,-,02 Aug 2020,08 Aug 2020, , ,-
+61,533210,KRITINUT,30 Jul 2020,Dividend - Rs. - 0.1800,-,02 Aug 2020,08 Aug 2020, , ,-
+62,532937,KUANTUM,30 Jul 2020,Dividend - Rs. - 2.5000,-,01 Aug 2020,07 Aug 2020, , ,-
+63,540704,MATRIMONY,30 Jul 2020,Final Dividend - Rs. - 1.5000,31 Jul 2020, , , , ,-
+64,541301,ORIENTELEC,30 Jul 2020,Final Dividend - Rs. - 0.5000,-,01 Aug 2020,07 Aug 2020, , ,-
+65,523708,EIMCOELECO,31 Jul 2020,Dividend - Rs. - 5.0000,-,04 Aug 2020,10 Aug 2020, , ,-
+66,500530,BOSCHLTD,03 Aug 2020,Final Dividend - Rs. - 105.0000,-,05 Aug 2020,27 Aug 2020, , ,-
+67,500068,DISAQ,03 Aug 2020,Final Dividend - Rs. - 2.5000,-,05 Aug 2020,12 Aug 2020, , ,-
+68,541179,ISEC,03 Aug 2020,Final Dividend - Rs. - 6.7500,-,05 Aug 2020,11 Aug 2020, , ,-
+69,504084,KAYCEEI,03 Aug 2020,Final Dividend - Rs. - 30.0000,04 Aug 2020, , , , ,-
+70,500257,LUPIN,03 Aug 2020,Final Dividend - Rs. - 6.0000,-,05 Aug 2020,12 Aug 2020, , ,-
+71,532163,SAREGAMA,03 Aug 2020,Final Dividend - Rs. - 1.5000,-,05 Aug 2020,11 Aug 2020, , ,-
+72,500114,TITAN,03 Aug 2020,Dividend - Rs. - 4.0000,-,05 Aug 2020,11 Aug 2020, , ,-
+73,500092,CRISIL,04 Aug 2020,Interim Dividend,05 Aug 2020, , , , ,-
+74,522263,JMCPROJECT,04 Aug 2020,Final Dividend - Rs. - 0.7000,-,06 Aug 2020,11 Aug 2020, , ,-
+75,533148,JSWENERGY,04 Aug 2020,Final Dividend - Rs. - 1.0000,-,06 Aug 2020,13 Aug 2020, , ,-
+76,506528,KELENRG,04 Aug 2020,Final Dividend - Rs. - 1.5000,-,06 Aug 2020,12 Aug 2020, , ,-
+77,504112,NELCO,04 Aug 2020,Dividend - Rs. - 1.2000,-,06 Aug 2020,13 Aug 2020, , ,-
+78,539354,POLYSPIN,04 Aug 2020,Final Dividend - Rs. - 0.6000,05 Aug 2020, , , , ,-
+79,509472,CRAVATEX,05 Aug 2020,Final Dividend - Rs. - 1.0000,-,07 Aug 2020,13 Aug 2020, , ,-
+80,500168,GOODYEAR,05 Aug 2020,Final Dividend - Rs. - 13.0000,-,07 Aug 2020,13 Aug 2020, , ,-
+81,532482,GRANULES,05 Aug 2020,Final Dividend - Rs. - 0.2500,-,07 Aug 2020,13 Aug 2020, , ,-
+82,500510,LT,05 Aug 2020,Final Dividend - Rs. - 8.0000,-,07 Aug 2020,13 Aug 2020, , ,-
+83,531201,SHILCTECH,05 Aug 2020,Dividend - Rs. - 1.0000,-,07 Aug 2020,14 Aug 2020, , ,-
+84,500575,VOLTAS,05 Aug 2020,Dividend - Rs. - 4.0000,-,07 Aug 2020,21 Aug 2020, , ,-
+85,506767,ALKYLAMINE,06 Aug 2020,Dividend - Rs. - 10.0000,-,08 Aug 2020,14 Aug 2020, , ,-
+86,504258,LAKSELEC,06 Aug 2020,Dividend - Rs. - 0.5000,-,08 Aug 2020,14 Aug 2020, , ,-
+87,524774,NGLFINE,06 Aug 2020,Final Dividend - Rs. - 1.7500,07 Aug 2020, , , , ,-
+88,505800,RANEHOLDIN,06 Aug 2020,Final Dividend - Rs. - 4.0000,07 Aug 2020, , , , ,-
+89,524542,SUKHJITS,06 Aug 2020,Dividend - Rs. - 2.0000,-,08 Aug 2020,13 Aug 2020, , ,-
+90,500470,TATASTEEL,06 Aug 2020,Final Dividend - Rs. - 10.0000,-,08 Aug 2020,20 Aug 2020, , ,-
+91,516072,VISHNU,06 Aug 2020,Dividend - Rs. - 1.0000,-,08 Aug 2020,14 Aug 2020, , ,-
+92,500238,WHIRLPOOL,06 Aug 2020,Final Dividend - Rs. - 5.0000,-,08 Aug 2020,21 Aug 2020, , ,-
+93,516030,YASHPAKKA,06 Aug 2020,Final Dividend - Rs. - 1.0000,07 Aug 2020, , , , ,-
+94,532456,COMPUAGE,07 Aug 2020,Dividend - Rs. - 0.2000,-,11 Aug 2020,18 Aug 2020, , ,-
+95,532504,NAVINFLUOR,07 Aug 2020,Final Dividend - Rs. - 3.0000,-,11 Aug 2020,14 Aug 2020, , ,-
+96,534076,ORIENTREF,07 Aug 2020,Final Dividend - Rs. - 2.5000,-,11 Aug 2020,18 Aug 2020, , ,-
+97,539523,ALKEM,10 Aug 2020,Final Dividend - Rs. - 3.0000,11 Aug 2020, , , , ,-
+98,523716,ASHIANA,10 Aug 2020,Final Dividend - Rs. - 0.3000,-,12 Aug 2020,18 Aug 2020, , ,-
 99,504212,UNIVCABLES,10 Aug 2020,Final Dividend - Rs. - 2.0000,-,12 Aug 2020,18 Aug 2020, , ,-
 100,517015,VINDHYATEL,10 Aug 2020,Dividend - Rs. - 10.0000,-,12 Aug 2020,18 Aug 2020, , ,-
 101,532460,PONNIERODE,11 Aug 2020,Dividend - Rs. - 4.0000,-,13 Aug 2020,19 Aug 2020, , ,-
@@ -147,16 +147,17 @@
 146,509496,ITDCEM,15 Sep 2020,Dividend - Rs. - 0.3000,-,17 Sep 2020,23 Sep 2020, , ,-
 147,533168,ROSSELLIND,15 Sep 2020,Final Dividend - Rs. - 0.2000,-,17 Sep 2020,23 Sep 2020, , ,-
 148,505160,TALBROAUTO,15 Sep 2020,Dividend - Rs. - 0.5000,-,17 Sep 2020,25 Sep 2020, , ,-
-149,523736,DVL,16 Sep 2020,Dividend - Rs. - 0.5000,-,18 Sep 2020,24 Sep 2020, , ,-
-150,506618,PUNJABCHEM,16 Sep 2020,Final Dividend - Rs. - 1.5000,-,18 Sep 2020,25 Sep 2020, , ,-
-151,508869,APOLLOHOSP,17 Sep 2020,Final Dividend - Rs. - 2.7500,-,19 Sep 2020,25 Sep 2020, , ,-
-152,500052,BEPL,17 Sep 2020,Final Dividend - Rs. - 0.5000,-,19 Sep 2020,26 Sep 2020, , ,-
-153,509480,BERGEPAINT,17 Sep 2020,Final Dividend - Rs. - 0.3000,-,19 Sep 2020,25 Sep 2020, , ,-
-154,526729,GOLDIAM,17 Sep 2020,Final Dividend - Rs. - 1.5000,-,21 Sep 2020,25 Sep 2020, , ,-
-155,509709,INTLCONV,17 Sep 2020,Dividend - Rs. - 0.2000,-,19 Sep 2020,26 Sep 2020, , ,-
-156,540954,IWP,17 Sep 2020,Dividend - Rs. - 0.1000,-,19 Sep 2020,25 Sep 2020, , ,-
-157,500378,JINDALSAW,17 Sep 2020,Dividend - Rs. - 2.0000,-,19 Sep 2020,25 Sep 2020, , ,-
-158,532741,KAMDHENU,18 Sep 2020,Dividend - Rs. - 0.5000,-,22 Sep 2020,28 Sep 2020, , ,-
-159,506530,KEMP,21 Sep 2020,Dividend - Rs. - 0.5000,-,23 Sep 2020,29 Sep 2020, , ,-
-160,526409,KKALPANAIND,21 Sep 2020,Final Dividend - Rs. - 0.1200,-,23 Sep 2020,29 Sep 2020, , ,-
-161,538964,MERCURYLAB,21 Sep 2020,Final Dividend - Rs. - 2.0000,-,23 Sep 2020,29 Sep 2020, , ,-
+149,506687,TRANSPEK,15 Sep 2020,Final Dividend - Rs. - 2.5000,-,17 Sep 2020,23 Sep 2020, , ,-
+150,523736,DVL,16 Sep 2020,Dividend - Rs. - 0.5000,-,18 Sep 2020,24 Sep 2020, , ,-
+151,506618,PUNJABCHEM,16 Sep 2020,Final Dividend - Rs. - 1.5000,-,18 Sep 2020,25 Sep 2020, , ,-
+152,508869,APOLLOHOSP,17 Sep 2020,Final Dividend - Rs. - 2.7500,-,19 Sep 2020,25 Sep 2020, , ,-
+153,500052,BEPL,17 Sep 2020,Final Dividend - Rs. - 0.5000,-,19 Sep 2020,26 Sep 2020, , ,-
+154,509480,BERGEPAINT,17 Sep 2020,Final Dividend - Rs. - 0.3000,-,19 Sep 2020,25 Sep 2020, , ,-
+155,526729,GOLDIAM,17 Sep 2020,Final Dividend - Rs. - 1.5000,-,21 Sep 2020,25 Sep 2020, , ,-
+156,509709,INTLCONV,17 Sep 2020,Dividend - Rs. - 0.2000,-,19 Sep 2020,26 Sep 2020, , ,-
+157,540954,IWP,17 Sep 2020,Dividend - Rs. - 0.1000,-,19 Sep 2020,25 Sep 2020, , ,-
+158,500378,JINDALSAW,17 Sep 2020,Dividend - Rs. - 2.0000,-,19 Sep 2020,25 Sep 2020, , ,-
+159,532741,KAMDHENU,18 Sep 2020,Dividend - Rs. - 0.5000,-,22 Sep 2020,28 Sep 2020, , ,-
+160,506530,KEMP,21 Sep 2020,Dividend - Rs. - 0.5000,-,23 Sep 2020,29 Sep 2020, , ,-
+161,526409,KKALPANAIND,21 Sep 2020,Final Dividend - Rs. - 0.1200,-,23 Sep 2020,29 Sep 2020, , ,-
+162,538964,MERCURYLAB,21 Sep 2020,Final Dividend - Rs. - 2.0000,-,23 Sep 2020,29 Sep 2020, , ,-
