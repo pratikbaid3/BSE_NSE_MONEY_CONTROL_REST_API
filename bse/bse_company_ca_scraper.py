@@ -102,7 +102,7 @@ company_list=[]
 for comp in c_new:
     company_list.append(comp)
 list_len=len(company_list)
-for i in range(482,list_len):
+for i in range(593,list_len):
     # Adding data to the database
     company=company_list[i]
     dataList=company_ca_scraper(company[1],company[0])
@@ -122,9 +122,9 @@ for i in range(482,list_len):
                 c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]))
             except:
                 print('Skipped')
-    # print('SLEEPING')
-    # time.sleep(30)
-    # print('SLEEP OVER')
+    print('SLEEPING')
+    time.sleep(30)
+    print('SLEEP OVER')
     print()
     conn.commit()
 conn.close()
