@@ -102,7 +102,7 @@ company_list=[]
 for comp in c_new:
     company_list.append(comp)
 list_len=len(company_list)
-for i in range(1950,list_len):
+for i in range(3323,list_len):
     # Adding data to the database
     company=company_list[i]
     dataList=company_ca_scraper(company[1],company[0])
