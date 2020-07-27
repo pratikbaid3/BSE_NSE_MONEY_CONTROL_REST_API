@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup as bs4
 import warnings
 import json
 import sqlite3
+import os
+import subprocess
 
 
 class NSEScraper:
@@ -79,11 +81,14 @@ class NSEScraper:
             "Cache-Control": "max-age=0",
         }
         for typ in action_type:
-            res = requests.get(
-                self.NSE_URL.format(typ), headers=headers,
-            )
-            res.raise_for_status()
-            for data in res.json():
+            # res = requests.get(
+            #     self.NSE_URL.format(typ), headers=headers,
+            # )
+            # res.raise_for_status()
+            os.popen(f'curl "{self.NSE_URL.format(typ)}" -H "cache-control: max-age=0" -H "dnt: 1" -H "upgrade-insecure-requests: 1" -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36" -H "sec-fetch-user: ?1" -H "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9" -H "sec-fetch-site: none" -H "sec-fetch-mode: navigate" -H "accept-encoding: gzip, deflate, br" -H "accept-language: en-US,en;q=0.9,hi;q=0.8" --compressed  -o api.json').read()
+            with open('api.json','r') as api:
+                res = json.load(api)
+            for data in res:
                 temp_data = {}
                 for index, data_format_type in enumerate(self.data_format):
                     temp_data[f"{data_format_type}"] = self.get_data_text(

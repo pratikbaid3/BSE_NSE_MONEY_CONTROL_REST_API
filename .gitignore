@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .vscodesendgrid.env
 file_storage/
+api.json
