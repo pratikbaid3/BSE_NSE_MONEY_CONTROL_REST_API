@@ -1,0 +1,6 @@
+from bse import bse_latest_ca_scraper
+from money_control import money_control_upcoming_ca_scraper
+from nse import nse_latest_ca_scraper
+
+bse_latest_ca_scraper.latest_ca_scrape()
+money_control_upcoming_ca_scraper.money_control_ca_scraper()
