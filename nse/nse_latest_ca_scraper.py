@@ -6,6 +6,7 @@ import json
 import sqlite3
 import os
 import subprocess
+import datetime
 
 
 class NSEScraper:
@@ -125,11 +126,11 @@ print(nse_data_list)
 conn = sqlite3.connect("corporate_action.db")
 c = conn.cursor()
 c_new = conn.cursor()
-create_table = "CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+create_table = "CREATE TABLE IF NOT EXISTS latest_nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date DATE,record_date text,bc_start_date text,bc_end_date text)"
 c.execute(create_table)
 
 # Transfering the data of the latest corporate action to the storage
-create_table = "CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date text,record_date text,bc_start_date text,bc_end_date text)"
+create_table = "CREATE TABLE IF NOT EXISTS nse_ca (key text PRIMARY KEY UNIQUE,symbol text, company_name text, series text, face_value text, purpose text,ex_date DATE,record_date text,bc_start_date text,bc_end_date text)"
 c_new.execute(create_table)
 c_new.execute("SELECT * FROM latest_nse_ca")
 add_data_to_db = "INSERT INTO nse_ca VALUES (?,?,?,?,?,?,?,?,?,?)"
@@ -173,7 +174,8 @@ for nse_data in nse_data_list:
                     nse_data["Series"],
                     nse_data["Face Value"],
                     nse_data["Purpose"],
-                    nse_data["Ex-Date"],
+                    # nse_data["Ex-Date"],
+                    datetime.datetime.strptime(nse_data["Ex-Date"], "%d-%b-%Y").strftime("%Y-%m-%d"),
                     nse_data["Record Date"],
                     nse_data["BC Start-Date"],
                     nse_data["BC End-Date"],

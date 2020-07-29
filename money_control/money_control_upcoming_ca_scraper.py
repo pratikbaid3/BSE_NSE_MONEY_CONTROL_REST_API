@@ -2,6 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup as soup
 import sqlite3
+from datetime import datetime
 
 def money_control_ca_scraper():
     ca_list=[]
@@ -97,11 +98,11 @@ ca_list=money_control_ca_scraper()
 conn=sqlite3.connect('corporate_action.db')
 c=conn.cursor()
 c_new=conn.cursor()
-create_table="CREATE TABLE IF NOT EXISTS latest_mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+create_table="CREATE TABLE IF NOT EXISTS latest_mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date DATE)"
 c.execute(create_table)
 
 #Transfering the data of the latest corporate action to the storage
-create_table="CREATE TABLE IF NOT EXISTS mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date text)"
+create_table="CREATE TABLE IF NOT EXISTS mc_ca (key text PRIMARY KEY UNIQUE, company_name text, purpose text, anouncment_date text, record_date text, ex_date DATE)"
 c_new.execute(create_table)
 c_new.execute('SELECT * FROM latest_mc_ca')
 add_data_to_db="INSERT INTO mc_ca VALUES (?,?,?,?,?,?)"
@@ -117,7 +118,7 @@ c.execute('DELETE FROM latest_mc_ca')
 add_data_to_db="INSERT INTO latest_mc_ca VALUES (?,?,?,?,?,?)"
 for data in ca_list:
     uniqueKey=data[0]+data[1]+data[2]
-    c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],data[4]))
+    c.execute(add_data_to_db,(uniqueKey,data[0],data[1],data[2],data[3],datetime.strptime(data[4], "%d-%m-%Y").strftime("%Y-%m-%d")))
 conn.commit()
 conn.close()
 print ('latest corporate action database updated successfully')

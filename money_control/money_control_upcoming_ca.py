@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import datetime
 
 def latest_ca():
     conn=sqlite3.connect('corporate_action.db')
@@ -11,7 +12,7 @@ def latest_ca():
             'purpose':data[2],
             'anouncement':data[3],
             'record_date':data[4],
-            'ex-date':data[5],
+            'ex-date':datetime.strptime(data[5], "%Y-%m-%d").strftime("%d-%b-%Y"),
             'bc_start_date':'None',
             'bc_end_date':'None',
             'nd_start_date':'None',
