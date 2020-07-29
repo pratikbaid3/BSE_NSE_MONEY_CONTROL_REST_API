@@ -27,7 +27,7 @@ api=Api(app)
 #BSE Latest corporate action from the database(Server)
 class LatestCA_BSE(Resource):
     def get(self):
-        return{'latest_ca':bse_latest_ca.latest_ca()}
+        return{'latest_ca':bse_latest_ca.latest_ca(request)}
 
 #BSE Particular company corporate action from historical data
 class CompanyCA_BSE(Resource):
@@ -53,7 +53,7 @@ class CSV_BSE(Resource):
 #NSE Latest corporate action from the database
 class LatestCA_NSE(Resource):
     def get(self):
-        return{'latest_ca':nse_latest_ca.latest_ca()}
+        return{'latest_ca':nse_latest_ca.latest_ca(request)}
 
 #NSE Particular company corporate action from historical data
 class CompanyCA_NSE(Resource):
@@ -79,7 +79,7 @@ class CSV_NSE(Resource):
 #Money Control Latest corporate action from the database
 class LatestCA_MC(Resource):
     def get(self):
-        return{'latest_ca':money_control_upcoming_ca.latest_ca()}
+        return{'latest_ca':money_control_upcoming_ca.latest_ca(request)}
 
 #Money Control Particular company corporate action from historical data
 class CompanyCA_MC(Resource):
