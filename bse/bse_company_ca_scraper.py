@@ -94,21 +94,21 @@ c=conn.cursor()
 c_new=conn.cursor()
 create_table="CREATE TABLE IF NOT EXISTS bse_ca (key text PRIMARY KEY UNIQUE,security_code text, security_name text, ex_date text, purpose text, record_date text,bc_start_date text,bc_end_date text,nd_start_date text,nd_end_date text,actual_payment_date text)"
 c.execute(create_table)
-create_table="CREATE TABLE IF NOT EXISTS not_scraped(code text,company text)"
+create_table="CREATE TABLE IF NOT EXISTS not_scraped1(code text,company text)"
 c.execute(create_table)
 
-c_new.execute('SELECT * FROM bse_companies')
+c_new.execute('SELECT * FROM not_scraped')
 company_list=[]
 for comp in c_new:
     company_list.append(comp)
 list_len=len(company_list)
-for i in range(4486,list_len):
+for i in range(0,list_len):
     # Adding data to the database
     company=company_list[i]
     dataList=company_ca_scraper(company[1],company[0])
     #print(dataList)
     add_data_to_db="INSERT INTO bse_ca VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-    companies_not_scraped='INSERT INTO not_scraped VALUES(?,?)'
+    companies_not_scraped='INSERT INTO not_scraped1 VALUES(?,?)'
     print(f'#${i}')
     print(f'Scraping ${company[1]}')
     if(len(dataList)==0):
