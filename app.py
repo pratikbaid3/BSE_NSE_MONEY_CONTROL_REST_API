@@ -19,6 +19,9 @@ from nse import nse_company_ca
 from money_control import money_control_upcoming_ca
 from money_control import money_control_company_ca
 
+#Predicted Ca
+from predicted_data import predicted_ca
+
 app=Flask(__name__, static_url_path='/public', static_folder='public/')
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.secret_key='Pratik'
@@ -86,6 +89,11 @@ class CompanyCA_MC(Resource):
     def get(self,code):
         return{'ca':money_control_company_ca.company_ca(code)}
 
+#Predicted Data from Nlp
+class Predicted_Ca(Resource):
+    def get(self):
+        return{'latest_ca':predicted_ca.latest_ca()}
+
 #Money Control PDF
 class PDF_MC(Resource):
     def get(self):
@@ -101,6 +109,7 @@ class CSV_MC(Resource):
             return send_file('public/Latest Corporate Actions MC.csv')
         except Exception as e:
             print(e)
+
         
 
 api.add_resource(LatestCA_BSE,'/api/bse_latestca')
@@ -113,6 +122,7 @@ api.add_resource(PDF_NSE,'/download/nse_pdf')
 api.add_resource(CSV_NSE,'/download/nse_csv')
 api.add_resource(LatestCA_MC,'/api/mc_latestca')
 api.add_resource(CompanyCA_MC,'/api/mc_companyca/<string:code>')
+api.add_resource(Predicted_Ca,'/api/predicted_ca')
 api.add_resource(PDF_MC,'/download/mc_pdf')
 api.add_resource(CSV_MC,'/download/mc_csv')
 
