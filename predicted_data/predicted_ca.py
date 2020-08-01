@@ -10,9 +10,9 @@ def latest_ca():
         purpose=data[1]
         date=data[2]
         content=data[3]
-        if(data[1]==None ):
+        if(data[1]=='' ):
             purpose='-'
-        if(data[2]==None ):
+        if(data[2]=='' ):
             date='-'
     
         corporate_action={
