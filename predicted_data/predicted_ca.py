@@ -7,9 +7,10 @@ def latest_ca():
     ca_array=[]
     for data in c:
         security_name=data[0]
-        purpose=data[1]
-        date=data[2]
-        content=data[3]
+        category=data[1]
+        purpose=data[2]
+        date=data[3]
+        content=data[4]
         if(data[1]=='' ):
             purpose='-'
         if(data[2]=='' ):
@@ -17,6 +18,7 @@ def latest_ca():
     
         corporate_action={
             'security_name':security_name,
+            'category':category,
             'purpose':purpose,
             'date':date,
             'content':content,
